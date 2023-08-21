@@ -1,0 +1,8 @@
+public class A {
+  public A() {}
+  protected int[] x;
+  public int fun() {
+    int[] a = new int[3];
+    return a[3];
+  }
+}

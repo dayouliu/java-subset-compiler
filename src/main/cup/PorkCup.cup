@@ -1,0 +1,819 @@
+import java_cup.runtime.*;
+import java.math.BigInteger;
+import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+parser code {:
+    private int intLiteralErrorCount = 0;
+:}
+
+terminal
+EXTENDS,
+IMPLEMENTS,
+STATIC,
+IMPORT,
+PACKAGE,
+PUBLIC,
+PRIVATE,
+INTERFACE,
+CLASS,
+DEFAULT,
+CONST,
+NEW,
+
+LEFT_PAREN,
+RIGHT_PAREN,
+LEFT_CURLY_BRACE,
+RIGHT_CURLY_BRACE,
+LEFT_SQUARE_BRACKET,
+RIGHT_SQUARE_BRACKET,
+SEMICOLON,
+COMMA,
+DOT,
+
+PLUS,
+MINUS,
+STAR,
+DIVIDE,
+MODULO,
+
+DOUBLE_EQUALS,
+LESS_THAN_OR_EQUAL,
+GREATER_THAN_OR_EQUAL,
+NOT_EQUAL,
+LESS_THAN,
+GREATER_THAN,
+NOT,
+ASSIGNMENT_OPERATOR,
+AND,
+OR,
+
+PROTECTED,
+ABSTRACT,
+FINAL,
+NATIVE,
+
+SUPER,
+RETURN,
+VOID,
+
+IF,
+ELSE,
+WHILE,
+FOR,
+
+INSTANCEOF,
+BOOLEAN,
+INT,
+CHAR,
+BYTE,
+SHORT,
+NON_NEGATIVE_INT_VAL,
+UNARY_OPERATOR,
+TRUE,
+FALSE,
+NULL,
+THIS;
+
+terminal String ID;
+terminal String STRING_LITERAL;
+terminal char CHAR_LITERAL;
+
+non terminal Modifier modifiers;
+non terminal HashSet<Modifier> modifiers_list;
+non terminal PkgURI pkg_uri, pkg_decl, pkg_import, pkg_uri_including_star;
+non terminal ArrayList<PkgURI> pkg_import_list, pkg_uri_list;
+non terminal String class_name;
+non terminal ClassOrInterface class_or_interface;
+non terminal ClassDecl class_decl;
+non terminal InterfaceDecl public_interface_decl;
+non terminal VariableType variable_type;
+non terminal Primitive primitive_type;
+non terminal ArrayType array_type;
+non terminal Parameter parameter;
+non terminal ArrayList<Parameter> parameter_list;
+non terminal Expr expr;
+non terminal ArrayList<Statement> statement_list;
+non terminal Statement statement;
+non terminal VariableDecl variable_decl;
+non terminal ControlFlow control_flow;
+non terminal Block block;
+non terminal If if;
+non terminal While while;
+non terminal ForInitializationExpr for_initialization_expr;
+non terminal ForConditionExpr for_condition_expr;
+non terminal ForIterationExpr for_iteration_expr;
+non terminal For for;
+non terminal PrimitiveCastExpr primitive_cast_expr;
+non terminal ArrayCastExpr array_cast_expr;
+non terminal RefCastExpr ref_cast_expr;
+non terminal SingleTermExpr single_term_expr;
+non terminal ArithmeticExpr arithemtic_expr;
+non terminal VariableAssignment variable_assignment;
+non terminal CastExpr cast_expr;
+non terminal FieldAccess field_access;
+non terminal MethodCall method_call;
+non terminal ArrayAccess array_access;
+non terminal Literal literal;
+non terminal ArrayList<Expr> args_list;
+non terminal Expr arg;
+non terminal NewObjectExpr new_object_expr;
+non terminal NewArrayExpr new_array_expr;
+non terminal InstanceofExpr instanceof_expr;
+non terminal ArithmeticExpr arithmetic_expr;
+non terminal ArithmeticOperator arithmetic_operator;
+non terminal UnaryExpr unary_expr;
+non terminal ArrayList<CompoundVariableType> implements_, interface_extends_;
+non terminal CompoundVariableType extends_;
+non terminal ArrayList<MethodOrField> method_or_field_list;
+non terminal ArrayList<MethodDecl> method_decl_list;
+non terminal MethodDecl method_decl;
+non terminal Constructor constructor;
+non terminal Method method;
+non terminal Field field;
+non terminal Java java;
+
+precedence right ELSE;
+precedence left ASSIGNMENT_OPERATOR;
+precedence left AND, OR;
+precedence nonassoc DOUBLE_EQUALS, NOT_EQUAL;
+precedence nonassoc LESS_THAN_OR_EQUAL, GREATER_THAN_OR_EQUAL, LESS_THAN, GREATER_THAN, INSTANCEOF;
+precedence left PLUS, MINUS;
+precedence left STAR, DIVIDE, MODULO;
+precedence left UNARY_OPERATOR;
+precedence left DOT;
+
+start with java;
+
+java ::= pkg_decl:pd pkg_import_list:pl class_or_interface:c
+      {:
+        if (intLiteralErrorCount != 0) {
+            report_fatal_error("int literal upper bound exceeded. intLiteralErrorCount:" + intLiteralErrorCount, null);
+        }
+        RESULT = new Java(pd, pl, c);
+      :};
+
+// this program's package name
+pkg_decl ::= PACKAGE pkg_uri:uri SEMICOLON
+            {:
+                RESULT = uri;
+            :}
+           | /*empty*/
+           {:
+                RESULT = new PkgURI(new ArrayList());
+           :}
+           ;
+
+// package imports
+pkg_import_list ::= pkg_import:pi pkg_import_list:pil
+                  {:
+                    pil.add(0, pi);
+                    RESULT = pil;
+                  :}
+                  | /*empty*/
+                  {:
+                    RESULT = new ArrayList<PkgURI>();
+                  :}
+                  ;
+
+pkg_import ::= IMPORT pkg_uri_including_star:puis SEMICOLON
+               {: RESULT = puis; :}
+              ;
+
+// ID.ID.ID or ID.ID.*
+pkg_uri_including_star ::= pkg_uri:pu DOT STAR
+                         {:
+                            pu.getLst().add("*");
+                            pu.setIncludeStar(true);
+                            RESULT = pu;
+                         :}
+                         | pkg_uri:pu
+                         {: RESULT = pu; :}
+                         ;
+
+// ID.ID.ID
+pkg_uri ::= pkg_uri:uri DOT ID:id
+          {:
+            uri.getLst().add(id);
+            RESULT = uri;
+          :}
+          | ID:id
+          {:
+            RESULT = new PkgURI(new ArrayList<String>(Arrays.asList(id)));
+          :}
+          ;
+
+pkg_uri_list ::= pkg_uri_list:pul COMMA pkg_uri:pu
+                {:
+                    pul.add(pu);
+                    RESULT = pul;
+                :}
+               | pkg_uri:pu
+               {:
+                    RESULT = new ArrayList<PkgURI>(Arrays.asList(pu));
+               :}
+               ;
+
+modifiers ::= PUBLIC
+            {: RESULT = Modifier.PUBLIC; :}
+            | PROTECTED
+            {: RESULT = Modifier.PROTECTED; :}
+            | ABSTRACT
+            {: RESULT = Modifier.ABSTRACT; :}
+            | FINAL
+            {: RESULT = Modifier.FINAL; :}
+            | STATIC
+            {: RESULT = Modifier.STATIC; :}
+            | NATIVE
+            {: RESULT = Modifier.NATIVE; :}
+            ;
+
+modifiers_list ::= modifiers:m modifiers_list:rml
+                 {:
+                    HashSet<Modifier>ml = new HashSet<Modifier>();
+                    ml.add(m);
+                    ml.addAll(rml);
+
+                    if (ml.contains(Modifier.ABSTRACT) && (ml.contains(Modifier.FINAL) || ml.contains(Modifier.STATIC))) {
+                        report_fatal_error("class modifier_list cannot have both abstract and final: ", ml);
+                    }
+
+                    RESULT = ml;
+                 :}
+                 | /* empty */
+                 {: RESULT = new HashSet<Modifier>(); :}
+                 ;
+
+class_or_interface ::= class_decl:c
+                      {:
+                        RESULT = c;
+                      :}
+                      | public_interface_decl:i
+                      {:
+                        RESULT = i;
+                      :};
+
+class_decl ::= modifiers_list:ml CLASS ID:className extends_:ext implements_:imp LEFT_CURLY_BRACE method_or_field_list:mfl RIGHT_CURLY_BRACE
+            {:
+                if (ml.size() == 0) {
+                    report_fatal_error("cannot have private class:  ", ml);
+                }
+                for (MethodOrField entry : mfl) {
+                    if (entry instanceof MethodDecl && (!((MethodDecl) entry).getModifier_list().contains(Modifier.ABSTRACT) && !((MethodDecl) entry).getModifier_list().contains(Modifier.NATIVE))) {
+                        report_fatal_error("method cannot have empty body if it is not abstract or native:  ", ml);
+                    }
+                }
+                RESULT = new ClassDecl(ml, className, ext, imp, mfl);
+            :}
+            ;
+
+// public interface
+public_interface_decl ::= PUBLIC INTERFACE ID:interfaceName interface_extends_:ext LEFT_CURLY_BRACE method_decl_list:mdl RIGHT_CURLY_BRACE
+                        {:
+                            RESULT = new InterfaceDecl(interfaceName, ext, mdl);
+                        :}
+                        ;
+
+extends_ ::= EXTENDS pkg_uri:pu
+            {:
+                RESULT = new CompoundVariableType(pu);
+            :}
+           | /* empty */
+            {: RESULT = null; :}
+           ;
+
+interface_extends_ ::= EXTENDS pkg_uri_list:pul
+            {:
+                ArrayList<CompoundVariableType> cvtl = new ArrayList<CompoundVariableType>();
+                for (PkgURI pu : pul) {
+                  cvtl.add(new CompoundVariableType(pu));
+                }
+                RESULT = cvtl;
+            :}
+           | /* empty */
+              {: RESULT = new ArrayList<CompoundVariableType>(); :}
+          ;
+
+implements_ ::= IMPLEMENTS pkg_uri_list:pul
+              {:
+                  ArrayList<CompoundVariableType> cvtl = new ArrayList<CompoundVariableType>();
+                  for (PkgURI pu : pul) {
+                      cvtl.add(new CompoundVariableType(pu));
+                  }
+                  RESULT = cvtl;
+              :}
+              | /* empty */
+              {: RESULT = new ArrayList<CompoundVariableType>(); :}
+              ;
+
+method_or_field_list ::= method_or_field_list:mfl method:m
+                    {:
+                        mfl.add(m);
+                        RESULT = mfl;
+                    :}
+                    | method_or_field_list:mfl field:f
+                    {:
+                        mfl.add(f);
+                        RESULT = mfl;
+                    :}
+                    | method_or_field_list:mfl constructor:c
+                    {:
+                        mfl.add(c);
+                        RESULT = mfl;
+                    :}
+                    | method_or_field_list:mfl method_decl:md
+                    {:
+                        mfl.add(md);
+                        RESULT = mfl;
+                    :}
+                    | /* empty */
+                    {:
+                        RESULT = new ArrayList<MethodOrField>();
+                    :}
+                    ;
+
+method_decl_list ::= method_decl:md method_decl_list:mdl
+                    {:
+                        mdl.add(0, md);
+                        RESULT = mdl;
+                    :}
+                   | /* empty */
+                   {: RESULT = new ArrayList<MethodDecl>(); :}
+                   ;
+
+method_decl ::= modifiers_list:ml variable_type:vt ID:id LEFT_PAREN parameter_list:pl RIGHT_PAREN SEMICOLON
+                {:
+//                    if (!ml.contains(Modifier.ABSTRACT) && !ml.contains(Modifier.NATIVE)) {
+//                        report_fatal_error("method cannot have empty body if it is not abstract or native:  ", ml);
+//                    } else if (ml.contains(Modifier.NATIVE) && !ml.contains(Modifier.STATIC)) {
+//                        report_fatal_error("native method must be static:  ", ml);
+//                    } else if (!ml.contains(Modifier.PUBLIC) && !ml.contains(Modifier.PROTECTED)) {
+//                        report_fatal_error("package private methods not allowed:  ", ml);
+//                    }
+
+                    if (ml.contains(Modifier.NATIVE) && !ml.contains(Modifier.STATIC)) {
+                        report_fatal_error("native method must be static:  ", ml);
+                    } else if (!ml.contains(Modifier.PUBLIC) && !ml.contains(Modifier.PROTECTED)) {
+                        report_fatal_error("package private methods not allowed:  ", ml);
+                    }
+                    if (ml.size() == 0){
+                        report_fatal_error("methods must have a modifier:  ", ml);
+                    }
+                    RESULT = new MethodDecl(ml, vt, id, pl);
+               :}
+              | modifiers_list:ml VOID ID:id LEFT_PAREN parameter_list:pl RIGHT_PAREN SEMICOLON
+              {:
+//                  if (!ml.contains(Modifier.ABSTRACT) && !ml.contains(Modifier.NATIVE)) {
+//                      report_fatal_error("method cannot have empty body if it is not abstract or native:  ", ml);
+//                  } else if (ml.contains(Modifier.NATIVE) && !ml.contains(Modifier.STATIC)) {
+//                      report_fatal_error("native method must be static:  ", ml);
+//                  } else if (!ml.contains(Modifier.PUBLIC) && !ml.contains(Modifier.PROTECTED)) {
+//                      report_fatal_error("package private methods not allowed:  ", ml);
+//                  }
+                  if (ml.contains(Modifier.NATIVE) && !ml.contains(Modifier.STATIC)) {
+                    report_fatal_error("native method must be static:  ", ml);
+                  } else if (!ml.contains(Modifier.PUBLIC) && !ml.contains(Modifier.PROTECTED)) {
+                    report_fatal_error("package private methods not allowed:  ", ml);
+                  }
+                  if (ml.size() == 0){
+                      report_fatal_error("methods must have a modifier:  ", ml);
+                  }
+                  RESULT = new MethodDecl(ml, new PrimitiveType(Primitive.VOID), id, pl);
+              :}
+              ;
+
+method ::= modifiers_list:ml variable_type:vt ID:id LEFT_PAREN parameter_list:pl RIGHT_PAREN block:b
+          {:
+            if (ml.contains(Modifier.ABSTRACT) || ml.contains(Modifier.NATIVE)) {
+                report_fatal_error("method cannot have a body if it is abstract or native:  ", ml);
+            } else if (ml.contains(Modifier.STATIC) && ml.contains(Modifier.FINAL)) {
+                report_fatal_error("static method cannot be final:  ", ml);
+            } else if (!ml.contains(Modifier.PUBLIC) && !ml.contains(Modifier.PROTECTED)) {
+                report_fatal_error("package private methods not allowed:  ", ml);
+            }
+            if (ml.size() == 0){
+                report_fatal_error("methods must have a modifier:  ", ml);
+            }
+            RESULT = new Method(ml, vt, id, pl, b);
+         :}
+         | modifiers_list:ml VOID ID:id LEFT_PAREN parameter_list:pl RIGHT_PAREN block:b
+         {:
+             if (ml.contains(Modifier.ABSTRACT) || ml.contains(Modifier.NATIVE)) {
+                 report_fatal_error("method cannot have a body if it is abstract or native:  ", ml);
+             } else if (ml.contains(Modifier.STATIC) && ml.contains(Modifier.FINAL)) {
+                 report_fatal_error("static method cannot be final:  ", ml);
+             } else if (!ml.contains(Modifier.PUBLIC) && !ml.contains(Modifier.PROTECTED)) {
+                 report_fatal_error("package private methods not allowed:  ", ml);
+             }
+             if (ml.size() == 0){
+                 report_fatal_error("methods must have a modifier:  ", ml);
+             }
+             RESULT = new Method(ml, new PrimitiveType(Primitive.VOID), id, pl, (Block) b);
+          :}
+         ;
+
+
+// variable types
+primitive_type ::= INT
+                   {:
+                    RESULT = Primitive.INT;
+                   :}
+                   | BOOLEAN
+                   {:
+                    RESULT = Primitive.BOOLEAN;
+                   :}
+                   | CHAR
+                   {:
+                    RESULT = Primitive.CHAR;
+                   :}
+                   | BYTE
+                   {:
+                    RESULT = Primitive.BYTE;
+                   :}
+                   | SHORT
+                   {:
+                    RESULT = Primitive.SHORT;
+                   :}
+                   ;
+
+variable_type ::= primitive_type:pt
+                {:
+                    RESULT = new PrimitiveType(pt);
+                :}
+                | pkg_uri:uri
+                {:
+                    RESULT = new CompoundVariableType(uri);
+                :}
+                | array_type:at
+                {:
+                    RESULT = at;
+                :}
+                ;
+
+array_type ::= primitive_type:pt LEFT_SQUARE_BRACKET RIGHT_SQUARE_BRACKET
+             {:
+                RESULT = new ArrayType(new PrimitiveType(pt));
+             :}
+             | pkg_uri:uri LEFT_SQUARE_BRACKET RIGHT_SQUARE_BRACKET
+             {:
+                RESULT = new ArrayType(new CompoundVariableType(uri));
+             :}
+             ;
+
+constructor ::= modifiers_list:ml ID:id LEFT_PAREN parameter_list:pl RIGHT_PAREN block:b
+            {:
+                RESULT = new Constructor(ml, id, pl, b);
+            :}
+            ;
+
+field ::= modifiers_list:ml variable_type:vt ID:id SEMICOLON
+        {:
+            if (ml.contains(Modifier.FINAL)) {
+                report_fatal_error("final field must have an initializer: ", ml);
+            }
+            if (ml.size() == 0) {
+                report_fatal_error("fields cannot be package private: ", ml);
+            }
+            RESULT = new Field(ml, vt, id, null);
+        :}
+        | modifiers_list:ml variable_type:vt ID:id ASSIGNMENT_OPERATOR expr:e SEMICOLON
+        {:
+            if (ml.size() == 0) {
+                report_fatal_error("fields cannot be package private: ", ml);
+            }
+            RESULT = new Field(ml, vt, id, (Expr) e);
+        :}
+        ;
+
+parameter_list ::= parameter:p COMMA parameter_list:pl
+            {:
+                pl.add(0, p);
+                RESULT = pl;
+            :}
+            | parameter:p
+            {:
+                RESULT = new ArrayList<Parameter>(Arrays.asList(p));
+            :}
+            | /* empty */
+            {:
+                RESULT = new ArrayList<Parameter>();
+            :}
+            ;
+
+parameter ::= variable_type:vt ID:id
+            {:
+                RESULT = new Parameter(vt, id);
+            :}
+            ;
+
+block ::= LEFT_CURLY_BRACE statement_list:sl RIGHT_CURLY_BRACE
+          {:
+                RESULT = new Block(sl);
+          :}
+          ;
+
+statement_list ::= statement:s statement_list:sl
+                {:
+                    sl.add(0, s);
+                    RESULT = sl;
+                :}
+                 | /* empty */
+                 {:
+                    RESULT = new ArrayList<Statement>();
+                 :}
+                 ;
+
+variable_decl ::= variable_type:vt ID:name
+                {:
+                    RESULT = new VariableDecl(vt, name, null);
+                :}
+                | variable_type:vt ID:name ASSIGNMENT_OPERATOR expr:e
+                {:
+                    RESULT = new VariableDecl(vt, name, e);
+                :}
+                ;
+
+statement ::= RETURN SEMICOLON
+            {: RESULT = new ReturnStatement(null); :}
+            | RETURN expr:ex SEMICOLON
+            {: RESULT = new ReturnStatement(ex); :}
+            | expr:ex SEMICOLON
+            {: RESULT = new ExprStatement(ex); :}
+            | variable_decl:vd SEMICOLON
+            {: RESULT = vd; :}
+            | control_flow: cf
+            {: RESULT = cf; :}
+            | block:bl
+            {: RESULT = bl; :}
+            | SEMICOLON
+            {: RESULT = new Semicolon(); :}
+            ;
+
+control_flow ::= if:i
+               {: RESULT = i; :}
+               | while: w
+               {: RESULT = w; :}
+               | for:f
+               {: RESULT = f; :}
+               ;
+
+if ::= IF LEFT_PAREN expr:ex RIGHT_PAREN statement:stmt
+     {: RESULT = new If(ex, stmt, null); :}
+     | IF LEFT_PAREN expr:ex RIGHT_PAREN statement:tstmt ELSE statement:estmt
+     {: RESULT = new If(ex, tstmt, estmt); :}
+     ;
+
+while ::= WHILE LEFT_PAREN expr:ex RIGHT_PAREN statement:stmt
+        {: RESULT = new While(ex, stmt); :};
+
+
+for_initialization_expr ::= variable_decl:vd
+                          {: RESULT = new ForInitializationExpr(vd); :}
+                          | variable_assignment: va
+                          {: RESULT = new ForInitializationExpr(new ExprStatement(va)); :}
+                          | method_call:mc
+                          {: RESULT = new ForInitializationExpr(new ExprStatement(mc)); :}
+                          |
+                          {: RESULT = new ForInitializationExpr(null); :}
+                          ;
+for_condition_expr ::= expr:ex
+                     {: RESULT = new ForConditionExpr(ex); :}
+                     |
+                     {: RESULT = new ForConditionExpr(null); :};
+
+for_iteration_expr ::= variable_assignment:va
+                     {: RESULT = new ForIterationExpr(va); :}
+                     | method_call:mc
+                     {: RESULT = new ForIterationExpr(mc); :}
+                     | new_object_expr:noe
+                     {: RESULT = new ForIterationExpr(noe); :}
+                     |
+                     {: RESULT = new ForIterationExpr(null); :}
+                     ;
+
+for ::= FOR LEFT_PAREN for_initialization_expr:ex1 SEMICOLON for_condition_expr:ex2 SEMICOLON for_iteration_expr:ex3 RIGHT_PAREN statement:stmt
+      {: RESULT = new For(ex1, ex2, ex3, stmt); :}
+      ;
+
+new_array_expr ::= NEW primitive_type:pt LEFT_SQUARE_BRACKET expr:ex RIGHT_SQUARE_BRACKET
+                 {: RESULT = new NewArrayExpr(new PrimitiveType(pt), null, ex); :}
+                 | NEW pkg_uri:pu LEFT_SQUARE_BRACKET expr:ex RIGHT_SQUARE_BRACKET
+                 {: RESULT = new NewArrayExpr(null, new CompoundVariableType(pu), ex); :}
+                 ;
+
+new_object_expr ::= NEW pkg_uri:pu LEFT_PAREN args_list:al RIGHT_PAREN
+                  {: RESULT = new NewObjectExpr(new CompoundVariableType(pu), al); :};
+
+cast_expr ::= primitive_cast_expr:pse
+            {: RESULT = pse; :}
+            | array_cast_expr:ace
+            {: RESULT = ace; :}
+            | ref_cast_expr:rce
+            {: RESULT = rce; :}
+            ;
+
+primitive_cast_expr ::= LEFT_PAREN primitive_type:pt RIGHT_PAREN pkg_uri:pkgURI
+                      {: RESULT = new PrimitiveCastExpr(pt, pkgURI.pkgURIToAccess()); :}
+                      | LEFT_PAREN primitive_type:pt RIGHT_PAREN single_term_expr:expr
+                      {: RESULT = new PrimitiveCastExpr(pt, expr); :}
+                      | LEFT_PAREN primitive_type:pt RIGHT_PAREN unary_expr:expr
+                      {: RESULT = new PrimitiveCastExpr(pt, expr); :}
+                      | LEFT_PAREN primitive_type:pt RIGHT_PAREN cast_expr:expr
+                      {: RESULT = new PrimitiveCastExpr(pt, expr); :}
+                      | LEFT_PAREN primitive_type:pt RIGHT_PAREN MINUS expr:ex
+                      {:
+                          if (ex instanceof IntLiteral && ((IntLiteral) ex).getValue().compareTo(new BigInteger("-2147483648")) == -1) {
+                              report_fatal_error("int literal lower bound exceeded:", ex);
+                          }
+                          if (ex instanceof IntLiteral && ((IntLiteral)ex).getValue().compareTo(new BigInteger("2147483648")) == 0) {
+                              intLiteralErrorCount -= 1;
+                          }
+
+                          RESULT = new PrimitiveCastExpr(pt, new UnaryExpr(UnaryOperator.MINUS, ex));
+                      :}
+                      ;
+
+array_cast_expr ::= LEFT_PAREN array_type:at RIGHT_PAREN pkg_uri:pkgURI
+                  {: RESULT = new ArrayCastExpr(at, pkgURI.pkgURIToAccess()); :}
+                  | LEFT_PAREN array_type:at RIGHT_PAREN single_term_expr:expr
+                  {: RESULT = new ArrayCastExpr(at, expr); :}
+                  | LEFT_PAREN array_type:at RIGHT_PAREN cast_expr:expr
+                  {: RESULT = new ArrayCastExpr(at, expr); :}
+                  ;
+
+ref_cast_expr ::= LEFT_PAREN expr:t RIGHT_PAREN pkg_uri:pkgURI
+                {:
+                    RESULT = new RefCastExpr(new CompoundVariableType(new PkgURI(t.exprToPkgURIList())), pkgURI.pkgURIToAccess());
+                :}
+                | LEFT_PAREN expr:t RIGHT_PAREN single_term_expr:e
+                {:
+                    RESULT = new RefCastExpr(new CompoundVariableType(new PkgURI(t.exprToPkgURIList())), e);
+                :}
+                | LEFT_PAREN expr:t RIGHT_PAREN cast_expr:e
+                {:
+                    RESULT = new RefCastExpr(new CompoundVariableType(new PkgURI(t.exprToPkgURIList())), e);
+                :}
+                ;
+
+expr ::= pkg_uri:pkgURI
+       {:
+           RESULT = pkgURI.pkgURIToAccess();
+       :}
+       | single_term_expr:ex
+       {: RESULT = ex; :}
+       | arithmetic_expr:ex
+       {: RESULT = ex; :}
+       | variable_assignment:ex
+       {: RESULT = ex; :}
+       | cast_expr:ex
+       {: RESULT = ex; :}
+       ;
+
+variable_assignment ::= pkg_uri:pkgURI ASSIGNMENT_OPERATOR expr:e
+                      {:
+                        RESULT = new VariableAssignment(pkgURI.pkgURIToAccess(), e);
+                      :}
+                      | field_access:fa ASSIGNMENT_OPERATOR expr:e
+                      {:
+                        RESULT = new VariableAssignment(fa, e);
+                      :}
+                      | array_access:aa ASSIGNMENT_OPERATOR expr:e
+                      {:
+                        RESULT = new VariableAssignment(aa, e);
+                      :}
+                      ;
+
+args_list ::= expr:e COMMA args_list:al
+            {:
+                al.add(0, e);
+                RESULT = al;
+            :}
+            | expr:e
+            {: RESULT = new ArrayList<Expr>(Arrays.asList(e));:}
+            | /* empty */
+            {: RESULT = new ArrayList<Expr>(); :}
+            ;
+
+single_term_expr ::= LEFT_PAREN expr:e RIGHT_PAREN
+                   {: RESULT = new ParenWrappedExpr(e); :}
+                   | field_access:e
+                   {: RESULT = e; :}
+                   | method_call:e
+                   {: RESULT = e; :}
+                   | array_access:e
+                   {: RESULT = e; :}
+                   | literal:e
+                   {: RESULT = e; :}
+                   | THIS
+                   {: RESULT = new This(); :}
+                   | new_array_expr:e
+                   {: RESULT = e; :}
+                   | new_object_expr:e
+                   {: RESULT = e; :};
+
+field_access ::= single_term_expr:e DOT ID:id
+                {:
+                    RESULT = new FieldAccess(e, id);
+                :}
+                ;
+
+method_call ::= single_term_expr:e DOT ID:id LEFT_PAREN args_list:al RIGHT_PAREN
+               {:
+                    RESULT = new MethodCall(e, id, al);
+               :}
+              | pkg_uri:uri LEFT_PAREN args_list:al RIGHT_PAREN
+              {:
+                    RESULT = new MethodCall(uri.getLst(), al);
+              :}
+              ;
+
+array_access ::= single_term_expr:ste LEFT_SQUARE_BRACKET expr:e RIGHT_SQUARE_BRACKET
+               {:
+                   if (ste instanceof NewArrayExpr) {
+                       report_fatal_error("multidimensional array creation expressions not allowed: ", ste);
+                   }
+                   RESULT = new ArrayAccess(ste, e);
+               :}
+               | pkg_uri:pkgURI LEFT_SQUARE_BRACKET expr:e RIGHT_SQUARE_BRACKET
+               {:
+                   RESULT = new ArrayAccess(pkgURI.pkgURIToAccess(), e);
+               :}
+               ;
+
+arithmetic_expr ::= expr:ex1 PLUS expr:ex2
+                  {: RESULT = new BinaryExpr(ex1, ArithmeticOperator.PLUS, ex2); :}
+                  | expr:ex1 MINUS expr:ex2
+                  {: RESULT = new BinaryExpr(ex1, ArithmeticOperator.MINUS, ex2); :}
+                  | expr:ex1 STAR expr:ex2
+                  {: RESULT = new BinaryExpr(ex1, ArithmeticOperator.STAR, ex2); :}
+                  | expr:ex1 DIVIDE expr:ex2
+                  {: RESULT = new BinaryExpr(ex1, ArithmeticOperator.DIVIDE, ex2); :}
+                  | expr:ex1 MODULO expr:ex2
+                  {: RESULT = new BinaryExpr(ex1, ArithmeticOperator.MODULO, ex2); :}
+                  | expr:ex1 DOUBLE_EQUALS expr:ex2
+                  {: RESULT = new BinaryExpr(ex1, ArithmeticOperator.DOUBLE_EQUALS, ex2); :}
+                  | expr:ex1 LESS_THAN_OR_EQUAL expr:ex2
+                  {: RESULT = new BinaryExpr(ex1, ArithmeticOperator.LESS_THAN_OR_EQUAL, ex2); :}
+                  | expr:ex1 GREATER_THAN_OR_EQUAL expr:ex2
+                  {: RESULT = new BinaryExpr(ex1, ArithmeticOperator.GREATER_THAN_OR_EQUAL, ex2); :}
+                  | expr:ex1 NOT_EQUAL expr:ex2
+                  {: RESULT = new BinaryExpr(ex1, ArithmeticOperator.NOT_EQUAL, ex2); :}
+                  | expr:ex1 LESS_THAN expr:ex2
+                  {: RESULT = new BinaryExpr(ex1, ArithmeticOperator.LESS_THAN, ex2); :}
+                  | expr:ex1 GREATER_THAN expr:ex2
+                  {: RESULT = new BinaryExpr(ex1, ArithmeticOperator.GREATER_THAN, ex2); :}
+                  | expr:ex1 AND expr:ex2
+                  {: RESULT = new BinaryExpr(ex1, ArithmeticOperator.AND, ex2); :}
+                  | expr:ex1 OR expr:ex2
+                  {: RESULT = new BinaryExpr(ex1, ArithmeticOperator.OR, ex2); :}
+                  | expr:ex INSTANCEOF pkg_uri:pu
+                  {: RESULT = new InstanceofExpr(ex, new CompoundVariableType(pu)); :}
+                  | expr:ex INSTANCEOF array_type:at
+                  {: RESULT = new InstanceofExpr(ex, at); :}
+                  | MINUS expr:ex
+                  {:
+                  if (ex instanceof IntLiteral && ((IntLiteral) ex).getValue().compareTo(new BigInteger("-2147483648")) == -1) {
+                      report_fatal_error("int literal lower bound exceeded:", ex);
+                  }
+                  if (ex instanceof IntLiteral && ((IntLiteral)ex).getValue().compareTo(new BigInteger("2147483648")) == 0) {
+                      intLiteralErrorCount -= 1;
+                  }
+
+                  RESULT = new UnaryExpr(UnaryOperator.MINUS, ex);
+                  :}
+                  %prec UNARY_OPERATOR
+                  | NOT expr:ex
+                  {: RESULT = new UnaryExpr(UnaryOperator.NOT, ex); :}
+                  %prec UNARY_OPERATOR
+                  ;
+
+literal ::= NON_NEGATIVE_INT_VAL:val
+         {:
+            BigInteger v = new BigInteger((String)val);
+            if (v.compareTo(new BigInteger("2147483647")) == 1) {
+                intLiteralErrorCount += 1;
+            }
+            RESULT = new IntLiteral(v);
+         :}
+          | STRING_LITERAL:str
+          {:
+            RESULT = new StringLiteral(str);
+          :}
+          | CHAR_LITERAL:c
+          {:
+            RESULT = new CharLiteral(c);
+          :}
+          | TRUE
+          {:
+            RESULT = new BoolLiteral(true);
+          :}
+          | FALSE
+          {:
+            RESULT = new BoolLiteral(false);
+          :}
+          | NULL
+          {:
+            RESULT = new NullLiteral();
+          :}
+          ;

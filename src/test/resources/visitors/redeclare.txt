@@ -1,0 +1,19 @@
+package java.util;
+public class LinkedList implements List {
+    public boolean add(Object o) {
+        int a = 0;
+        if(empty) {
+            cur = o;
+            empty = false;
+        } else {
+            if(next == null) {
+                next = new LinkedList();
+                {
+                    bool a = 0;
+                }
+            }
+            next.add(o);
+        }
+        return true;
+    }
+}

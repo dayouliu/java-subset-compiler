@@ -1,0 +1,1382 @@
+commit 8f95b135da6ac05358e0898a4a8d2d1e722dc62e
+Merge: de2d208 ce64b60
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Wed Apr 26 14:15:11 2023 -0400
+
+    Merge branch 'main' into constant-folding
+
+commit ce64b60d4410a345acc87f038c1e4f944b87222f
+Merge: 3871569 e8a6ea0
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Wed Apr 26 13:05:22 2023 -0400
+
+    Merge branch 'reg-alloc-2' into 'main'
+    
+    Reg alloc 2
+    
+    See merge request dymo/porkbelly!59
+
+commit e8a6ea0538fa96a596af4eea9b84bd1b62625a24
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Wed Apr 26 12:42:21 2023 -0400
+
+    update
+
+commit 372342be5fa9b4d07b6a9d01b099072ddfe59409
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Wed Apr 26 04:37:25 2023 -0400
+
+    kai sun helped a little
+
+commit de2d2083125109c202c35155392c538a33b30294
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Apr 25 21:22:28 2023 -0400
+
+    constant folding at tir
+
+commit 3871569e78d2d723033446b9ac431766a83bf44c
+Merge: 06eb10b 731dcf7
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Tue Apr 25 19:43:57 2023 -0400
+
+    Merge branch 'reg-alloc-hotfix' into 'main'
+    
+    fix
+    
+    See merge request dymo/porkbelly!57
+
+commit 731dcf7163d72c8aef5b88750d2cfbd212759d11
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Tue Apr 25 19:42:17 2023 -0400
+
+    fix
+
+commit 06eb10b476475ab2fe21c3ddefb99020f7aab69b
+Merge: b08aa22 ee080dd
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Tue Apr 25 19:35:30 2023 -0400
+
+    Merge branch 'reg-alloc' into 'main'
+    
+    reg alloc
+    
+    See merge request dymo/porkbelly!55
+
+commit ee080dd42613781e99bf55c3848dfe877a1707ad
+Merge: d5a8896 b08aa22
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Tue Apr 25 19:08:48 2023 -0400
+
+    merged main
+
+commit d5a8896aad7f938ec6ed19ee112dbb4ec64fe5cc
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Tue Apr 25 18:58:55 2023 -0400
+
+    bug fix
+
+commit b08aa22034b3d46a75fb3e280334636e344cc6e1
+Merge: 04c9da0 35c7a85
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Apr 25 18:38:50 2023 -0400
+
+    Merge branch 'support-objects' into 'main'
+    
+    Fixing String Concat
+    
+    See merge request dymo/porkbelly!56
+
+commit 35c7a85b11809f903eca447c98794c16d15abe95
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Apr 25 18:38:50 2023 -0400
+
+    Fixing String Concat
+
+commit 04c9da0489e4020f9acea8089eaec0b9df455957
+Merge: 35feb34 85b1bc7
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Apr 25 16:35:03 2023 -0400
+
+    Merge branch 'support-objects' into 'main'
+    
+    Support Objects
+    
+    See merge request dymo/porkbelly!54
+
+commit 85b1bc7eef2aaab107ff37aaa294c14b43633859
+Author: Kai Sun <k49sun@uwaterloo.ca>
+Date:   Tue Apr 25 16:35:03 2023 -0400
+
+    [Kai Sun, Dennis Mo] Support Objects
+
+commit abbef1977b1720543a51826f2f82f05894ff1bec
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Tue Apr 25 15:43:46 2023 -0400
+
+    update
+
+commit 144b5277f6cb15063c34992718ede07a9bd0285c
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Tue Apr 25 15:42:52 2023 -0400
+
+    update
+
+commit 41225ac6e97dce74c98a0c6138f067c58f3eedf2
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Mon Apr 24 03:25:02 2023 -0400
+
+    more updates
+
+commit 59f58389398495ca83b19522ca655febc1005981
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Mon Apr 24 02:02:10 2023 -0400
+
+    merge support-objects
+
+commit 09b090fe294d33f813dc0873dc6ded95506fb87e
+Merge: e652175 b9d46db
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Mon Apr 24 02:01:24 2023 -0400
+
+    merge support-object
+
+commit e652175d8437557e4fc95d8a1f84920a7bd5d43d
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Mon Apr 24 01:53:24 2023 -0400
+
+    update
+
+commit 13bb54ab7ce8e29c5b74be83ddd8ca8dc71ae950
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Sun Apr 23 18:45:40 2023 -0400
+
+    update
+
+commit b9d46db3e83d160c1bb25ad45fbbc7babf3a316f
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Apr 23 17:07:25 2023 -0400
+
+    fix string and int concat
+
+commit 839694897c54834f2bc2cde89c71cf5f8f2d9dd6
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Sun Apr 23 14:52:20 2023 -0400
+
+    update
+
+commit 1d78728b7711be9be87990d20929834aed07ddc4
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Sat Apr 22 19:13:08 2023 -0400
+
+    edits
+
+commit c9799755e632659e50a3cb36fe89d1c993460ae8
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Sat Apr 22 18:15:04 2023 -0400
+
+    reg alloc
+
+commit 392a100938eda4459578732682f4ffa2a224d163
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Fri Apr 21 23:35:25 2023 -0400
+
+    update test
+
+commit 69bb9b781aa95affe7ddffeae6cf4ae2337e745a
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Fri Apr 21 22:51:14 2023 -0400
+
+    init
+
+commit b2d4ca2514b777d74257137a2f2e2b1f2e72960b
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Fri Apr 21 21:06:32 2023 -0400
+
+    fixing refcastexpr error
+
+commit 413564f100a4f566160f6de4ab5b1503151fb6e1
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Thu Apr 20 02:45:40 2023 -0400
+
+    fixing some stuff
+
+commit c34053d3a15225e00f467375cd2d6b190133a52d
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Apr 18 18:44:20 2023 -0400
+
+    helloworld working
+
+commit 999c9020cbbac02f054d5f4ed9eff53296581082
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Apr 18 15:04:13 2023 -0400
+
+    native int support and 6.1 works
+
+commit e3635ae6065f571a31d74e33fad9f47e903b9e9c
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Apr 18 02:26:22 2023 -0400
+
+    strings working
+
+commit 6c0fa2576758cfef56c27b0cf1b2ee3e190c822d
+Author: Kai Sun <math11functions@gmail.com>
+Date:   Mon Apr 17 21:45:45 2023 -0400
+
+    Make method ids unique
+
+commit afa10bb6ae6506dcbd4d76c13a7697a17a6f34a9
+Author: Kai Sun <math11functions@gmail.com>
+Date:   Mon Apr 17 21:37:18 2023 -0400
+
+    Implement interface method calling
+
+commit 46de4e1f16d2ada68a18ac18da26ccb44d674042
+Author: Kai Sun <math11functions@gmail.com>
+Date:   Mon Apr 17 14:18:37 2023 -0400
+
+    Add instanceof test
+
+commit 6028c2d0ae2d3baa1636a7e2948883a6d93d806e
+Author: Kai Sun <math11functions@gmail.com>
+Date:   Mon Apr 17 14:16:01 2023 -0400
+
+    Support method calls and fix assembly malloc and sete+
+
+commit 2bdc06e7a34c5434fec7dccfb5589d49c8eefa29
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Apr 16 23:29:41 2023 -0400
+
+    implement ref cast and instanceof
+
+commit aef9f3484ebe5dd7769abf4adb78b393b7864759
+Merge: fd461bf d1992f3
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Apr 16 22:23:50 2023 -0400
+
+    Merge branch 'support-objects' of https://git.uwaterloo.ca/dymo/porkbelly into support-objects
+
+commit fd461bff7c883494f246057fe6856744e9f6008a
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Apr 16 22:23:45 2023 -0400
+
+    adding inheritance matrix
+
+commit d1992f3765b636d320dd9adf9d673b85b8400f93
+Author: Kai Sun <math11functions@gmail.com>
+Date:   Sun Apr 16 17:46:11 2023 -0400
+
+    Add support for variable assignment with field access lhs
+
+commit 819160dee70a80f8216c1524f87e45eb657d9b57
+Author: Kai Sun <math11functions@gmail.com>
+Date:   Sun Apr 16 17:28:49 2023 -0400
+
+    Only declare each method once
+
+commit 30b07d18b9345f5440decab6f1e61f258f7b8db6
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Apr 16 17:01:39 2023 -0400
+
+    adding this, fixing constructor, finished field access, update variable access
+
+commit 4af1202baae7c26cba002a44f867a52ec536136b
+Merge: a8b802c 35feb34
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Apr 16 15:01:34 2023 -0400
+
+    Merge branch 'main' into support-objects
+
+commit a8b802ccf2288e8549fe3efac14efc140b45728d
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Apr 16 15:01:27 2023 -0400
+
+    using realextends instead of extends
+
+commit 931d9b26d7d40ea7cff4f20cc3ccd37840ed2f89
+Author: Kai Sun <math11functions@gmail.com>
+Date:   Sun Apr 16 12:37:12 2023 -0400
+
+    Implement new object and simple field access
+
+commit 35feb34a2d097f4deaa4b319738b315fd6d284dd
+Merge: aa098a2 626b233
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Apr 16 00:57:21 2023 -0400
+
+    Merge branch 'a6-setup' into 'main'
+    
+    adding public test
+    
+    See merge request dymo/porkbelly!53
+
+commit 626b23305457ad7345b67bd82eb54c4418226949
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Apr 16 00:00:16 2023 -0400
+
+    adding public test
+
+commit aa098a2a917bbe38ac0562c7368c8b49e15b2bc9
+Merge: 0e5d548 0410ecf
+Author: Kai Sun <k49sun@uwaterloo.ca>
+Date:   Fri Apr 7 20:16:02 2023 -0400
+
+    Merge branch 'translate-to-assembly' into 'main'
+    
+    In LIR->Assembly, add support for parameters and callee/r-saved registers and static variables and more operations
+    
+    See merge request dymo/porkbelly!52
+
+commit 0410ecf45e1239a186e614c21aa0fec1b261b78e
+Author: Kai Sun <k49sun@uwaterloo.ca>
+Date:   Fri Apr 7 20:16:02 2023 -0400
+
+    [COMMIT BY KAI SUN, DAYOU LIU, DENNIS MO] In LIR->Assembly, add support for parameters and callee/r-saved registers and static variables and more operations
+
+commit 0e5d5484eb2b6bf7b5500a5df9d6e59ad74034ac
+Merge: 672c9b7 4745d9b
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Thu Apr 6 16:00:50 2023 -0400
+
+    Merge branch 'build-assembly' into 'main'
+    
+    Build assembly with Makefile
+    
+    See merge request dymo/porkbelly!50
+
+commit 4745d9bf401a924c3368f24f6bde742f1d3da0a2
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Thu Apr 6 16:00:49 2023 -0400
+
+    Build assembly with Makefile
+
+commit 672c9b73f340b0bd35d4ab5714827d57e9a73c30
+Merge: d3b4e87 e3cb087
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Thu Apr 6 05:02:38 2023 -0400
+
+    Merge branch 'lir-functional' into 'main'
+    
+    tiling, abstract assembly, and assembly generation
+    
+    See merge request dymo/porkbelly!45
+
+commit e3cb087396cf5d28d6feee7eeee83214fa1cbe70
+Merge: bd25db0 d3b4e87
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Thu Apr 6 08:59:46 2023 +0000
+
+    Merge branch 'main' into 'lir-functional'
+    
+    # Conflicts:
+    #   src/test/kotlin/IRTest.kt
+
+commit bd25db0a8cbc564d40c7774a22637b1434668cd8
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Thu Apr 6 04:58:17 2023 -0400
+
+    1+1 done
+
+commit 88b5438320b0d7064f3281b370bde001c6297727
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Thu Apr 6 04:45:57 2023 -0400
+
+    1+1 too hard
+
+commit d3b4e878d7d941a1e546620796631a6e2871877a
+Merge: 1840471 893748f
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Thu Apr 6 00:54:49 2023 -0400
+
+    Merge branch 'tir-functional' into 'main'
+    
+    Adding ordering to the fieldMaps
+    
+    See merge request dymo/porkbelly!48
+
+commit 893748f1a893801fbbfea30db2844ffabb333199
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Thu Apr 6 00:54:49 2023 -0400
+
+    Adding ordering to the fieldMaps
+
+commit 9b8f028eaca2b9c6271c1464c51969c493e446ee
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Thu Apr 6 00:53:34 2023 -0400
+
+    more tiles
+
+commit 184047136a294bf5daeea26845719b90d464fee2
+Merge: def3f2f cf9b8e4
+Author: Kai Sun <k49sun@uwaterloo.ca>
+Date:   Wed Apr 5 22:35:57 2023 -0400
+
+    Merge branch 'fix-negative-casting' into 'main'
+    
+    Fix negative primitive casting
+    
+    See merge request dymo/porkbelly!49
+
+commit cf9b8e4626bfe8a4d2c040560a741372fd164f3b
+Author: Kai Sun <math11functions@gmail.com>
+Date:   Wed Apr 5 22:33:33 2023 -0400
+
+    Fix negative primitive casting
+
+commit cfe0cf24c573fd833b21368b80fa563f29c8c19f
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Wed Apr 5 19:05:02 2023 -0400
+
+    more tiles
+
+commit c420b7cb94703ab111e80d549b9ba54d767c0d57
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Wed Apr 5 17:55:33 2023 -0400
+
+    added tiles
+
+commit def3f2fdc47687902f4c7f8f50ac3666cb8b8943
+Merge: b7a1fd5 ecd81ac
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Wed Apr 5 14:49:08 2023 -0400
+
+    Merge branch 'tir-functional' into 'main'
+    
+    [Dennis, Dayou] Adding Call Stmt Support in Simulator
+    
+    See merge request dymo/porkbelly!47
+
+commit ecd81ac82f5a059b4f76c5b0e2697f8430bb5de8
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Wed Apr 5 14:49:08 2023 -0400
+
+    [Dennis, Dayou] Adding Call Stmt Support in Simulator
+
+commit 73a303959df6b97f098eb9fd35fffb95df18fed2
+Merge: 35df177 f9ec3e8
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Wed Apr 5 13:17:55 2023 -0400
+
+    merged tir
+
+commit f9ec3e89ea00e1fd384cd24bb815f3b97b506e4e
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Wed Apr 5 13:08:22 2023 -0400
+
+    adding call stmt support in simulator
+
+commit 35df1779a0095c746d7250e6cc2ef5910eb6a70e
+Merge: f50e488 b7a1fd5
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Wed Apr 5 12:50:37 2023 -0400
+
+    merged main
+
+commit f50e488fb7262a6e6c78a38725af7f5ef7d43d64
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Wed Apr 5 03:26:20 2023 -0400
+
+    more tiles
+
+commit b7a1fd5cc994945c12b0596e821df000ef53ad56
+Merge: 9337f46 9038dbb
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Wed Apr 5 01:55:10 2023 -0400
+
+    Merge branch 'tir-functional' into 'main'
+    
+    Adding Static Variable Support
+    
+    See merge request dymo/porkbelly!46
+
+commit 9038dbbb2a4941345f291ff9d309954c5719fdce
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Wed Apr 5 01:55:10 2023 -0400
+
+    Adding Static Variable Support
+
+commit a980ab01a78052587dddd66e31f880d846f3a786
+Merge: 930d354 9337f46
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Wed Apr 5 01:52:38 2023 -0400
+
+    Merge branch 'main' into tir-functional
+
+commit 930d3546780c7fa28a450d651701f9a5ae19f0ed
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Wed Apr 5 01:48:14 2023 -0400
+
+    adding global var and static field initialization
+
+commit 17849dc4d0816af481fd9dca7f722ffee09d3432
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Wed Apr 5 00:57:27 2023 -0400
+
+    revert merge mistakes
+
+commit 05acaacaa6b19a8ebd6d6eac1405d5a914c35848
+Merge: 7e85bb2 9337f46
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Wed Apr 5 00:41:18 2023 -0400
+
+    merged
+
+commit 7e85bb2be27552007984c3001f328c314614b358
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Tue Apr 4 23:48:41 2023 -0400
+
+    ops
+
+commit 48bbffbeb30df8729958bef93e4ee5550cc5c83e
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Apr 4 16:17:01 2023 -0400
+
+    parse all files in directory
+
+commit 9337f464f3e93ae55e3d8e25195e60bd7c4db24e
+Merge: 4a6f2e5 8db7e36
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Mon Apr 3 23:34:29 2023 -0400
+
+    Merge branch 'tir-functional' into 'main'
+    
+    translate to tir functionally
+    
+    See merge request dymo/porkbelly!43
+
+commit 8db7e368eaec9455a3ad647ac975cfeb2da1d307
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Mon Apr 3 23:34:29 2023 -0400
+
+    translate to tir functionally
+
+commit 267aab8cd4e194877608a54519be9467784f0c6d
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Mon Apr 3 23:33:56 2023 -0400
+
+    adding masking to all arithmetic operations
+
+commit d8d90e82dd33971a2cde9ab3fe6e48c4b7f73f69
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Mon Apr 3 23:10:32 2023 -0400
+
+    adding simple casting support
+
+commit 4618f4a9260f0bfe1030b3295a2eb6d8a389ba23
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Mon Apr 3 18:29:11 2023 -0400
+
+    added prelim tiling
+
+commit e1ef67aca77cdfd20533881a089df17d18603031
+Merge: 68575c5 382d6ae
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Mon Apr 3 18:22:42 2023 -0400
+
+    Merge branch 'lir-functional' into 'tir-functional'
+    
+    translate tir to lir functionally
+    
+    See merge request dymo/porkbelly!44
+
+commit 382d6ae0aaa27f90fa1c8a6fe619350dc0fcff24
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Mon Apr 3 18:22:42 2023 -0400
+
+    translate tir to lir functionally
+
+commit 4518eb01ac08fc87d417cfd3c59e0507849e9f3d
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Sun Apr 2 03:22:36 2023 -0400
+
+    lir update
+
+commit 68575c5942fe6ecec823eff835b2a8746bbc4473
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Apr 2 01:42:53 2023 -0400
+
+    adding statements that were missed
+
+commit 897bfa15d2b49fc51419ba1ef8e8e9a3a3ebfa93
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sat Apr 1 21:52:41 2023 -0400
+
+    passing J1_01.java
+
+commit 10078e84998002f0ea794e5b16b906df0208bbe7
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sat Apr 1 21:34:54 2023 -0400
+
+    update ir testing
+
+commit 192e05f9fe96507f0d23a7c20212cc6a401df999
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sat Apr 1 21:27:18 2023 -0400
+
+    update ir testing
+
+commit 66ff41679ca5dcdda95cd08fa28f24b6d72fe143
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Thu Mar 30 18:46:30 2023 -0400
+
+    adding test stuff
+
+commit 08eeaf30563406054d36ff735c0c8fb57de764a8
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Thu Mar 30 16:44:06 2023 -0400
+
+    adding method call
+
+commit 0efdc05b9102e72337e5122c01a9883f2769f0d7
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Wed Mar 29 14:16:04 2023 -0400
+
+    translate to tir functionally
+
+commit 4a6f2e5c586116b702ed37bced9f660927b7ad45
+Merge: 9ad251c f11b39b
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Mar 28 14:38:40 2023 -0400
+
+    Merge branch 'a5-setup' into 'main'
+    
+    Testing TIR with Simulator
+    
+    See merge request dymo/porkbelly!41
+
+commit f11b39bded3f7dfdcf24a6dcf2d06eb4799a6fa3
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Mar 28 14:38:40 2023 -0400
+
+    Testing TIR with Simulator
+
+commit 9ad251c99dce6d337ec72ea07fe26f50aff54024
+Merge: f575a0c 756d074
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Mar 26 19:22:28 2023 -0400
+
+    Merge branch 'a5-setup' into 'main'
+    
+    adding tir package and set up basic translation functions
+    
+    See merge request dymo/porkbelly!40
+
+commit 756d0745497432ee1e188b20bf1f09cbbb8c3dbb
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Mar 26 19:22:28 2023 -0400
+
+    adding tir package and implemented translation to tir and lowering. Set up basic testing.
+
+commit f575a0c12843cf3f88789727b1df993a64111ed6
+Merge: 528e49b 9f8803e
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Mar 21 01:19:10 2023 -0400
+
+    Merge branch 'a5-setup' into 'main'
+    
+    set up testing and stdlib for a5
+    
+    See merge request dymo/porkbelly!39
+
+commit 9f8803e10227b42f741360d3e3adac5950d1aa42
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Mar 21 00:27:35 2023 -0400
+
+    set up testing and stdlib for a5
+
+commit 528e49b196babaeeefe75a37b867bae24a32963e
+Merge: 9da1cbd 519bef6
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Fri Mar 17 18:28:14 2023 -0400
+
+    Merge branch 'update-makefile' into 'main'
+    
+    update makefile
+    
+    See merge request dymo/porkbelly!38
+
+commit 519bef6666ab31a332b113943067a7e90b051ecd
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Fri Mar 17 18:26:34 2023 -0400
+
+    update makefile
+
+commit 9da1cbd7cc9cd4addca3fc81783bfd84e8c5a337
+Merge: eef3082 00fe015
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Fri Mar 17 18:24:05 2023 -0400
+
+    Merge branch 'fix' into 'main'
+    
+    handle constructor return statements
+    
+    See merge request dymo/porkbelly!37
+
+commit 00fe0158f38cbfc30a34e0764b5a1db3c2cd2043
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Fri Mar 17 12:36:06 2023 -0400
+
+    handle constructor return statements
+
+commit eef3082a60e580bac5a01e3827b61791be168a4c
+Merge: 8d3e93e 6399903
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Wed Mar 15 23:16:52 2023 -0400
+
+    Merge branch 'definite-assignment' into 'main'
+    
+    definite assignment variable declaration implemented
+    
+    See merge request dymo/porkbelly!36
+
+commit 63999039f6f92d3855afd8bc66eb9ac3f49aa596
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Wed Mar 15 21:26:46 2023 -0400
+
+    definite assignment variable declaration implemented
+
+commit 8d3e93e4e9f1059ce34004f19d359051d42e57db
+Merge: 98e4d30 1fc3d91
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Wed Mar 15 18:11:25 2023 -0400
+
+    Merge branch 'reach2' into 'main'
+    
+    implemented constant expression evaluation and execution path return check
+    
+    See merge request dymo/porkbelly!35
+
+commit 1fc3d910d78507f88ad52368517f9aab391eeb2d
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Wed Mar 15 18:11:25 2023 -0400
+
+    implemented constant expression evaluation and execution path return check
+
+commit 98e4d30fd33b0c372191fa6d2d9a1a7cfbc4180a
+Merge: 6cbd867 8d11ea8
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Mar 14 13:55:03 2023 -0400
+
+    Merge branch 'reach2' into 'main'
+    
+    adding reachability for while and for, only the boolean literals
+    
+    See merge request dymo/porkbelly!34
+
+commit 8d11ea8a136f818a2028c139e2f54a24bea18c26
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Mar 14 13:54:47 2023 -0400
+
+    adding reachability for while and for, only the boolean literals
+
+commit 6cbd8674816a2816b6b8db02154718ccff31fb41
+Merge: 8bd100d 96949c4
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Mar 14 12:47:25 2023 -0400
+
+    Merge branch 'reachability' into 'main'
+    
+    adding simple reachability, also removing use of dummy semincolon
+    
+    See merge request dymo/porkbelly!33
+
+commit 96949c41a855e4b62928441e1f15dbac7726df0b
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Mar 14 02:18:26 2023 -0400
+
+    adding simple reachability, also removing use of dummy semincolon
+
+commit 8bd100d899ec0376ed10e9b36ef901b3d38021da
+Merge: 4f7d8fc f08360d
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Mar 14 01:01:54 2023 -0400
+
+    Merge branch 'dead-assignments-liveness' into 'main'
+    
+    Implement dataflow analysis, live variable analysis, and dead variable assignment
+    
+    See merge request dymo/porkbelly!32
+
+commit f08360d9ddeba7ee692e96bc30896119055652d0
+Author: Kai Sun <math11functions@gmail.com>
+Date:   Mon Mar 13 02:03:12 2023 -0400
+
+    Implement dataflow analysis, live variable analysis, and dead variable assignment
+
+commit 4f7d8fc7420be918db8cd8a80a3be6d412e62915
+Merge: e74b733 1cf087d
+Author: Kai Sun <k49sun@uwaterloo.ca>
+Date:   Mon Mar 13 11:29:21 2023 -0400
+
+    Merge branch 'warning' into 'main'
+    
+    adding warning list to main function and fixing tests
+    
+    See merge request dymo/porkbelly!31
+
+commit 1cf087d13ff9b7bdebc1a93728cface1ea3a9d9c
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Mon Mar 13 11:07:34 2023 -0400
+
+    adding warning list to main function and fixing tests
+
+commit e74b7333b23b26f90f35c47b3402d37d7a9c4851
+Merge: 7206a74 170a010
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Mar 12 15:38:51 2023 -0400
+
+    Merge branch 'a4-setup' into 'main'
+    
+    a4 public tests cases
+    
+    See merge request dymo/porkbelly!30
+
+commit 170a0102bd5b68c75f8ae74f8e2af91d388d3cbf
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Mar 12 12:22:43 2023 -0400
+
+    a4 public tests cases
+
+commit 7206a748bcd1299e098b42c445124cbd771bd611
+Merge: 12f67e6 55d5ed4
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Wed Mar 8 19:48:24 2023 -0500
+
+    Merge branch 'disambig-paren' into 'main'
+    
+    disambig type paren
+    
+    See merge request dymo/porkbelly!29
+
+commit 55d5ed44a90a069355a84e55df1db1a68bac1dee
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Wed Mar 8 19:45:23 2023 -0500
+
+    disamib
+
+commit 12f67e6a9408176c921f0d981e45eecbf8ac9315
+Merge: d4a8408 d0f04a9
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Wed Mar 8 12:49:06 2023 -0500
+
+    Merge branch 'dennis-cleanup' into 'main'
+    
+    Update type checking.
+    
+    See merge request dymo/porkbelly!28
+
+commit d0f04a96fb09c558895e5918bc2d64a9a4997e8b
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Mar 5 23:10:47 2023 -0500
+
+    adding some static method checking
+
+commit 10a32adb6d59cb5efd5364e54713b11d57172922
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Mar 5 12:03:14 2023 -0500
+
+    adding canWiden flag and fix type checking on fields
+
+commit 199a4061f57fe8406a36a058c43b5ca92f40f0f7
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Mar 5 00:33:52 2023 -0500
+
+    created void primitive for void functions
+
+commit d0717c85ba59d34e0e41731b8004df5ae3e580fa
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sat Mar 4 23:37:44 2023 -0500
+
+    need to compare primitive type better lol
+
+commit 030c5b4b1e36dc73fba17b6d8baabac5d59c421d
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sat Mar 4 14:58:50 2023 -0500
+
+    cast arrays into object and vise versa
+
+commit 7dc77d26c69ef82258ea4d1196d60d518bc5faac
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sat Mar 4 14:12:52 2023 -0500
+
+    adding string plus operator type checking
+
+commit a4d4ca56a55bfec5e4d6963394ad4752a33d6018
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Fri Mar 3 21:00:42 2023 -0500
+
+    adding type checking on return statement
+
+commit 0a017b43361ef54dcf7450a388aeac892e047889
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Fri Mar 3 12:46:46 2023 -0500
+
+    refactoring and protected checking and non static call checking
+
+commit b022ebbfa16d12d2b219b5da0d900c11c73c8439
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Fri Mar 3 10:40:13 2023 -0500
+
+    refactor pkguri construction and access pattern
+
+commit d4a8408d7260077af5fc4d54fe96961726b1a702
+Merge: a5fe12e 6d80933
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Thu Mar 2 20:48:35 2023 -0500
+
+    Merge branch 'forward-ref' into 'main'
+    
+    added forward ref check
+    
+    See merge request dymo/porkbelly!27
+
+commit 6d80933711d4abacbaa9f9aa0cc3b68e1a340253
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Thu Mar 2 19:26:58 2023 -0500
+
+    added forward ref check
+
+commit a5fe12e036d953a5fe92e417f559b793c477cd99
+Merge: 2dd9238 0a0a244
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Thu Mar 2 19:11:04 2023 -0500
+
+    Merge branch 'type-evaluation-and-checking' into 'main'
+    
+    Implement type evaluation and type checking
+    
+    See merge request dymo/porkbelly!26
+
+commit 0a0a24469bd15813ebe9f4c757030a1b83b14b6b
+Author: Kai Sun <math11functions@gmail.com>
+Date:   Thu Mar 2 15:22:10 2023 -0500
+
+    Implement type evaluation and type checking
+
+commit 2dd9238d0d24520ccedc4a2f34d4ea96cc170389
+Merge: 79859a3 eb88bf9
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Tue Feb 28 01:21:14 2023 -0500
+
+    Merge branch 'ambi-names' into 'main'
+    
+    Ambiguous Names
+    
+    See merge request dymo/porkbelly!25
+
+commit eb88bf949e94bee3b4c43696ec48019a731f6eae
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Tue Feb 28 01:21:14 2023 -0500
+
+    Ambiguous Names
+
+commit 79859a31a858e9d4abeff85b1edbb9e7e2cadef3
+Merge: 6994ba7 ee4ba18
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sat Feb 25 14:34:56 2023 -0500
+
+    Merge branch 'inherit-method-table' into 'main'
+    
+    adding new graph construction visitor
+    
+    See merge request dymo/porkbelly!24
+
+commit ee4ba18093dac1489c0258277f21fc2978eea286
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sat Feb 25 14:34:55 2023 -0500
+
+    adding new graph construction visitor, constructed globalclassentrytable for all fields, methods, method decls, and constructors of classe
+
+commit 6994ba7edf99ac9b55099672b46715e982422562
+Merge: 6e22167 24ed4b7
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Thu Feb 23 15:34:04 2023 -0500
+
+    Merge branch 'public-test' into 'main'
+    
+    rename and add a3 public test
+    
+    See merge request dymo/porkbelly!23
+
+commit 24ed4b75a0ba4cdbaffe07506e818975bd4e51fc
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Thu Feb 23 15:33:44 2023 -0500
+
+    rename and add a3 public test
+
+commit 6e22167797889373db425394887ef3bcd59bf8cb
+Merge: 0cec292 0f49483
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Feb 19 17:51:27 2023 -0500
+
+    Merge branch 'make-updates' into 'main'
+    
+    updated makefile to exclude tests
+    
+    See merge request dymo/porkbelly!22
+
+commit 0f4948397db30f2ae7f52513b4512e46c87173de
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sun Feb 19 17:50:39 2023 -0500
+
+    updated makefile to exclude tests
+
+commit 0cec2925030d3f437868cea7d4e16f2d99a9e4fb
+Merge: 4425038 3add8e7
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Fri Feb 17 23:38:10 2023 -0500
+
+    Merge branch 'hierachy-check' into 'main'
+    
+    Hierachy checking
+    
+    See merge request dymo/porkbelly!21
+
+commit 3add8e7138a926baf9eebc210fda7217fb76773f
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Fri Feb 17 23:38:10 2023 -0500
+
+    [COMMIT WITH DENNIS MO, DAYOU LIU] Hierachy checking
+
+commit 44250382e6c26c96a2ed98eb71b7468be9ba69ee
+Merge: b7ded3f 52aa92e
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Fri Feb 17 09:39:59 2023 -0500
+
+    Merge branch 'type-linking' into 'main'
+    
+    Implement type linking weeding
+    
+    See merge request dymo/porkbelly!20
+
+commit 52aa92edff5d2c1b3f97e93ff9b5361b4e6881c3
+Author: Kai Sun <math11functions@gmail.com>
+Date:   Fri Feb 17 07:47:01 2023 -0500
+
+    Implement type linking weeding
+
+commit b7ded3f48c683bacd57c604bc10954a493443fff
+Merge: 3b80f94 8e3e9ff
+Author: Kai Sun <k49sun@uwaterloo.ca>
+Date:   Fri Feb 17 00:11:29 2023 -0500
+
+    Merge branch 'global-table' into 'main'
+    
+    global table
+    
+    See merge request dymo/porkbelly!19
+
+commit 8e3e9ff336741d3dc412890fbc029dbc00f5530c
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Fri Feb 17 00:11:29 2023 -0500
+
+    global table
+
+commit 3b80f94e6098a85f1ebc6707cf3e9fa30918c2d9
+Merge: a6742bf 3816bb2
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Thu Feb 16 15:05:09 2023 -0500
+
+    Merge branch 'fix-public-test' into 'main'
+    
+    Fix assignment 1 public test, as for iteration can be new object expr
+    
+    See merge request dymo/porkbelly!18
+
+commit 3816bb2c4ed7d471a8492e72da41e0c68bbe2fd8
+Author: Kai Sun <math11functions@gmail.com>
+Date:   Thu Feb 16 15:02:15 2023 -0500
+
+    Fix assignment 1 public test, as for iteration can be new object expr
+
+commit a6742bf8a6c517b71aeaa4f6212faa09b477d5be
+Merge: df662d2 c47060d
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Thu Feb 16 14:31:51 2023 -0500
+
+    Merge branch 'symbol-table' into 'main'
+    
+    Symbol table
+    
+    See merge request dymo/porkbelly!17
+
+commit c47060da8bc4da6a705643ef10229dd73eba7987
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Thu Feb 16 14:31:50 2023 -0500
+
+    Symbol table
+
+commit df662d22a6352d6a2a0a7db8c724d7ab3acc268b
+Merge: 302b9e9 443ee7a
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Wed Feb 15 00:45:55 2023 -0500
+
+    Merge branch 'setup-test' into 'main'
+    
+    Setup test
+    
+    See merge request dymo/porkbelly!16
+
+commit 443ee7a571e5673cd24a722f4c1d30c829dabfb1
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Wed Feb 15 00:45:55 2023 -0500
+
+    Setup test
+
+commit 302b9e92ce22398f5219e93813b619b6ae90c518
+Merge: b9a7f64 2ac43ec
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Feb 14 22:11:37 2023 -0500
+
+    Merge branch 'more-ast' into 'main'
+    
+    method call and constructor
+    
+    See merge request dymo/porkbelly!15
+
+commit 2ac43ec7ebd22b382a9c5390b821595d979907c6
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Feb 14 22:11:37 2023 -0500
+
+    [COMMIT WITH DENNIS MO, DAYOU LIU, KAI SUN] Finish AST construction
+
+commit b9a7f640c54b891ccd7f6598543af4734502d366
+Merge: 1515bbc 54b1351
+Author: Kai Sun <k49sun@uwaterloo.ca>
+Date:   Sat Feb 11 18:09:23 2023 -0500
+
+    Merge branch 'ast2' into 'main'
+    
+    Abstract Syntax Tree Initial Setup
+    
+    See merge request dymo/porkbelly!14
+
+commit 54b13516547af4b341003fb74229e5d2c7e2b2cc
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Sat Feb 11 18:09:22 2023 -0500
+
+    [COMMIT WITH DENNIS MO, DAYOU LIU, KAI SUN] Abstract Syntax Tree Initial Setup
+
+commit 1515bbcb9edec1d38ed790dba124bce33f508a12
+Merge: c6555a7 46524bc
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Fri Feb 3 19:24:42 2023 -0500
+
+    Merge branch 'lexer-edits' into 'main'
+    
+    lexer edits
+    
+    See merge request dymo/porkbelly!13
+
+commit 46524bc7109e3f82fef6afa925d25a37e3f4cdbe
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Fri Feb 3 19:22:26 2023 -0500
+
+    lexer edits
+
+commit c6555a7d0e658ab98c1d0cf0ef5ec81900c3d15e
+Merge: e5a5195 4a14068
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Fri Feb 3 13:34:35 2023 -0500
+
+    Merge branch 'weeder' into 'main'
+    
+    Weeder
+    
+    See merge request dymo/porkbelly!12
+
+commit 4a14068262c47bbf6c6759ba8996f828d332adcf
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Fri Feb 3 13:34:35 2023 -0500
+
+    [COMMIT WITH DENNIS MO, DAYOU LIU, KAI SUN] Adding weeding into the CUP file
+
+commit e5a519530f6ceabd3b1e2fcf6fe10504e961fb98
+Merge: 7bc5309 ff68b7b
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Wed Feb 1 22:51:39 2023 -0500
+
+    Merge branch 'parser2' into 'main'
+    
+    added prim cast + octal escapes
+    
+    See merge request dymo/porkbelly!10
+
+commit 7bc5309cc798f425062fd1b1199ed474b96ee283
+Merge: 98c439b 6f15bc6
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Wed Feb 1 22:49:46 2023 -0500
+
+    Merge branch 'marmoset' into 'main'
+    
+    Construct Makefile and executable
+    
+    See merge request dymo/porkbelly!11
+
+commit 6f15bc665be1e32b7a1ed61d5eb4f3a5d3687751
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Wed Feb 1 22:38:24 2023 -0500
+
+    Construct Makefile and executable
+
+commit ff68b7bd072b345412f9803ebc2383cb08ab49c9
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Wed Feb 1 22:18:50 2023 -0500
+
+    added prim cast + octal escapes
+
+commit 98c439b81d3984989dd42523355ba004544f7849
+Merge: baa50cf ceadf8e
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Wed Feb 1 19:56:11 2023 -0500
+
+    Merge branch 'parser' into 'main'
+    
+    Implement Parser
+    
+    See merge request dymo/porkbelly!6
+
+commit ceadf8e2891dbbb8a06cf944ad17ebb8adae42e3
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Wed Feb 1 19:56:10 2023 -0500
+
+    [COMMIT WITH DENNIS MO, DAYOU LIU, KAI SUN] Construct Basic Parser Grammar
+
+commit baa50cf2a9382701502641f3c3a01f78f623cbaf
+Merge: 28eeb51 9dbb514
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Tue Jan 31 16:58:43 2023 -0500
+
+    Merge branch 'cup-tests' into 'main'
+    
+    added cup tests
+    
+    See merge request dymo/porkbelly!9
+
+commit 9dbb514d9f9e4889fcc12c28639ec799e807fa5e
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Tue Jan 31 16:58:43 2023 -0500
+
+    Add CUP tests
+
+commit 28eeb515eac2ad807621fadbe16f5c06cb3a6d5a
+Merge: 5659b97 98f3a6b
+Author: Kai Sun <k49sun@uwaterloo.ca>
+Date:   Sun Jan 29 15:27:28 2023 -0500
+
+    Merge branch 'add-lexer-error-increment-decrement' into 'main'
+    
+    Add support for more operators and return errors for appropriate operators.
+    
+    See merge request dymo/porkbelly!5
+
+commit 98f3a6bd2f45d243482f9c5d865c7120b9effbc4
+Author: Kai Sun <math11functions@gmail.com>
+Date:   Sun Jan 29 15:20:46 2023 -0500
+
+    Add support for more operators and return errors for appropriate operators.
+
+commit 5659b976473c4c1d8b0f642d4cbad0894c30370f
+Merge: 1f5c59c 5931051
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Sun Jan 29 12:38:32 2023 -0500
+
+    Merge branch 'lex-str-char' into 'main'
+    
+    added str and char literals
+    
+    See merge request dymo/porkbelly!4
+
+commit 5931051b38094ee2fe6b59a2e615670187e974a0
+Author: Dayou Liu <dayou.liu@uwaterloo.ca>
+Date:   Sun Jan 29 12:38:32 2023 -0500
+
+    added str and char literals
+
+commit 1f5c59cc98ec12ad4751bdcf87098097dedc8572
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Fri Jan 27 23:16:14 2023 -0500
+
+    added lexing for comments, arithmetic ops, boolean comp
+
+commit 5695e8e95246f4c70307576270f4f43339a7efc5
+Merge: 55778f0 3e6d5f4
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Fri Jan 27 01:20:20 2023 -0500
+
+    Merge branch 'add-lexing-rules' into 'main'
+    
+    Add lexing rules
+    
+    See merge request dymo/porkbelly!3
+
+commit 3e6d5f4ce499f9696e78f7ce2eefbba4d671b013
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Fri Jan 27 01:20:20 2023 -0500
+
+    [COMMIT WITH DENNIS MO, DAYOU LIU, KAI SUN] Add lexing rules
+
+commit 55778f047f2542b2043acff3e3b8ee75fd3f3c50
+Merge: f0ccd1b b7a5229
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Thu Jan 26 19:55:51 2023 -0500
+
+    Merge branch 'cup-jflex-integration' into 'main'
+    
+    [COMMIT WITH DENNIS MO, DAYOU LIU, KAI SUN] Cup and Jflex integration
+    
+    See merge request dymo/porkbelly!2
+
+commit b7a5229ab15063c2788dbaa6b21151be56cc2e4b
+Author: Kai Sun <k49sun@uwaterloo.ca>
+Date:   Thu Jan 26 19:55:51 2023 -0500
+
+    [COMMIT WITH DENNIS MO, DAYOU LIU, KAI SUN] Cup and Jflex integration
+
+commit f0ccd1be80bf0f56cacf8fbd79b3943bc3989f65
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Thu Jan 26 16:48:13 2023 -0500
+
+    remove pipeline
+
+commit 7cbce6c9172d000adf48e68664d72c82a67df664
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Thu Jan 26 16:33:48 2023 -0500
+
+    Update .gitlab-ci.yml file
+
+commit 1899e1b5a8ba2f323db85eb3151473833f8ce19c
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Mon Jan 23 12:31:35 2023 -0500
+
+    Update .gitlab-ci.yml file
+
+commit 797e16853867ad7e876bd5f14855ac886587f8a7
+Merge: f970751 ab11266
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Fri Jan 20 23:49:05 2023 -0500
+
+    Merge branch 'main' of https://git.uwaterloo.ca/dymo/porkbelly
+
+commit f9707510ef71ffe0ea5e233ff1eed8500b4c9867
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Fri Jan 20 23:48:38 2023 -0500
+
+    [COMMIT WITH KAI SUN, DAYOU LIU, DENNISMO] use jflex and implement scanner
+
+commit ab112661ffc77fa0a6d8b9aa4a4838609b1fded4
+Author: Dayou Liu <dy4liu@uwaterloo.ca>
+Date:   Thu Jan 19 00:07:13 2023 -0500
+
+    test commit
+
+commit e53753cbe63dd476b486782b4ecbd360815e2598
+Author: Dennis Mo <dennis.mo@uwaterloo.ca>
+Date:   Wed Jan 18 06:09:49 2023 -0500
+
+    update workspace settings
+
+commit f50bf476c85bdf37d286755cebd797df23a4f7ab
+Author: Dennis Mo <dymo@uwaterloo.ca>
+Date:   Sat Jan 14 22:38:39 2023 -0500
+
+    initial commit
