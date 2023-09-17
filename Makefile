@@ -7,6 +7,7 @@ joosc:
 
 build:
 	./gradlew assemble
+
 cup:
 	java -jar libs/java_cup.jar -nowarn -destdir build/generated/sources/main/cup src/main/cup/PorkCup.cup
 
@@ -35,6 +36,7 @@ as: $(patsubst output/%.s,output/%.o,$(wildcard output/*.s))
 
 test:
 	echo $(patsubst output/%.s,output/%.o,$(wildcard output/*.s))
+
 # Run
 run: as
 	./main; echo "Exit code: $$?"
@@ -49,6 +51,6 @@ test-asm: scp-asm
 
 STDLIBFILES := $(wildcard src/test/resources/6.1/java/**/*.java)
 
-bench:
-	./joosc src/test/resources/CustomTest/ConstBench.java $(STDLIBFILES) -opt-const-only && ./main
+example:
+	./joosc src/test/resources/CustomTest/Test.java $(STDLIBFILES) -opt-const-only && ./main; echo "Return value: $$?"
 

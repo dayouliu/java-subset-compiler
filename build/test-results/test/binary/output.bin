@@ -1,0 +1,332 @@
+DFILE PATH: src/test/resources/a6/J1_A_String_ByteShortCharInt.java 
+
+// CODE_GENERATION
+
+,public class J1_A_String_ByteShortCharInt {
+*	public J1_A_String_ByteShortCharInt() {}
+	
+	public static int test() {
+		int result = 0;
+
+		byte b0 = (byte)-128;
+		byte b1 = (byte)127;
+L		if (String.valueOf((int)b0).equals((Object)(""+b0))) result = result + 1;
+L		if (String.valueOf((int)b1).equals((Object)(""+b1))) result = result + 2;
+		
+		short s0 = (short)-32768;
+		short s1 = (short)32767;
+L		if (String.valueOf((int)s0).equals((Object)(""+s0))) result = result + 4;
+L		if (String.valueOf((int)s1).equals((Object)(""+s1))) result = result + 8;
+
+		char c0 = (char)0;
+		char c1 = (char)65535;
+H		if (String.valueOf(c0).equals((Object)(""+c0))) result = result + 16;
+H		if (String.valueOf(c1).equals((Object)(""+c1))) result = result + 32;
+
+		int i0 = (int)-2147483648;
+		int i1 = (int)2147483647;
+H		if (String.valueOf(i0).equals((Object)(""+i0))) result = result + 64;
+I		if (String.valueOf(i1).equals((Object)(""+i1))) result = result + 128;
+
+!		if (result == 255) return 123;
+		return result;
+	}
+}
+ûGLOBAL TABLE: [(java.lang, String), (java.lang, Class), (java.lang, Character), (java.util, Arrays), (java.io, OutputStream), (java.lang, Object), (java.lang, System), (java.lang, Integer), (, J1_A_String_ByteShortCharInt), (java.io, Serializable), (java.lang, Byte), (java.io, PrintStream), (java.lang, Number), (java.lang, Cloneable), (java.lang, Short), (java.lang, Boolean)]
+ÑInheritance Graph: {(java.lang, String)=[(java.lang, Object)], (java.lang, Class)=[(java.lang, Object)], (java.lang, Character)=[(java.lang, Object)], (java.util, Arrays)=[(java.lang, Object)], (java.io, OutputStream)=[(java.lang, Object)], (java.lang, Object)=[], (java.lang, System)=[(java.lang, Object)], (java.lang, Integer)=[(java.lang, Number)], (, J1_A_String_ByteShortCharInt)=[(java.lang, Object)], (java.io, Serializable)=[(java.lang, Object)], (java.lang, Byte)=[(java.lang, Object)], (java.io, PrintStream)=[(java.io, OutputStream)], (java.lang, Number)=[(java.lang, Object)], (java.lang, Cloneable)=[(java.lang, Object)], (java.lang, Short)=[(java.lang, Number)], (java.lang, Boolean)=[(java.lang, Object)]}
+½Sorted AST List: [Object, String, Class, Character, Arrays, OutputStream, System, Number, Integer, J1_A_String_ByteShortCharInt, Serializable, Byte, PrintStream, Cloneable, Short, Boolean]
+æ+TIR: {javalangStringlength=tir.ir.ast.FuncDecl@60975100, javalangStringtoString=tir.ir.ast.FuncDecl@1253e7cb, javalangStringhashCode=tir.ir.ast.FuncDecl@2d36e77e, javalangStringsubstringINTINT=tir.ir.ast.FuncDecl@61c9c3fd, javalangStringtrim=tir.ir.ast.FuncDecl@3b0c9195, javalangStringvalueOfBYTE=tir.ir.ast.FuncDecl@366c4480, javalangStringcompareTojavalangString=tir.ir.ast.FuncDecl@2c7b5824, javalangStringcompareTojavalangObject=tir.ir.ast.FuncDecl@302a07d, javalangStringvalueOfINT=tir.ir.ast.FuncDecl@5cdd09b1, javalangStringvalueOfSHORT=tir.ir.ast.FuncDecl@8c11eee, javalangStringvalueOfBOOLEAN=tir.ir.ast.FuncDecl@7e8dcdaa, javalangStringvalueOfjavalangString=tir.ir.ast.FuncDecl@681a8b4e, javalangStringconcatjavalangString=tir.ir.ast.FuncDecl@5cbe877d, javalangStringvalueOfCHAR=tir.ir.ast.FuncDecl@5c08c46a, javalangStringtoCharArray=tir.ir.ast.FuncDecl@4cf8b2dc, javalangStringindexOfjavalangString=tir.ir.ast.FuncDecl@708400f6, javalangStringvalueOfjavalangObject=tir.ir.ast.FuncDecl@5829e4f4, javalangStringequalsjavalangObject=tir.ir.ast.FuncDecl@4218500f, javalangStringcharAtINT=tir.ir.ast.FuncDecl@4bff64c2, javalangStringString=tir.ir.ast.FuncDecl@1b2c4efb, javalangStringStringjavalangString=tir.ir.ast.FuncDecl@c35172e, javalangStringStringCHAR=tir.ir.ast.FuncDecl@c2db68f, javalangClassClass=tir.ir.ast.FuncDecl@3cc41abc, javalangCharactertoString=tir.ir.ast.FuncDecl@4566d049, javalangCharacterCharacterCHAR=tir.ir.ast.FuncDecl@61ce23ac, javalangCharacterCharacter=tir.ir.ast.FuncDecl@3668d4, javautilArraysequalsBOOLEANBOOLEAN=tir.ir.ast.FuncDecl@1c3b9394, javautilArraysequalsCHARCHAR=tir.ir.ast.FuncDecl@6f2cfcc2, javautilArraysArrays=tir.ir.ast.FuncDecl@7f6f61c8, javalangObjecttoString=tir.ir.ast.FuncDecl@4c2cc639, javalangObjecthashCode=tir.ir.ast.FuncDecl@ccb4b1b, javalangObjectclone=tir.ir.ast.FuncDecl@4097cac, javalangObjectgetClass=tir.ir.ast.FuncDecl@ec2cc4, javalangObjectequalsjavalangObject=tir.ir.ast.FuncDecl@2a5b3fee, javalangObjectObject=tir.ir.ast.FuncDecl@7c1e2a2d, javaioOutputStreamwriteCHAR=tir.ir.ast.FuncDecl@333dd51e, javaioOutputStreamflush=tir.ir.ast.FuncDecl@52d645b1, javaioOutputStreamwriteINT=tir.ir.ast.FuncDecl@2101b44a, javaioOutputStreamOutputStream=tir.ir.ast.FuncDecl@2cc3ad05, javalangSystemgc=tir.ir.ast.FuncDecl@710b18a6, javalangSystemSystem=tir.ir.ast.FuncDecl@119020fb, javalangIntegerparseIntjavalangString=tir.ir.ast.FuncDecl@3d9f6567, javalangIntegertoString=tir.ir.ast.FuncDecl@c055c54, javalangIntegerintValue=tir.ir.ast.FuncDecl@25e2ab5a, javalangIntegerIntegerjavalangString=tir.ir.ast.FuncDecl@35e5d0e5, javalangIntegerIntegerINT=tir.ir.ast.FuncDecl@73173f63, javalangIntegerInteger=tir.ir.ast.FuncDecl@55562aa9, J1AStringByteShortCharInttest=tir.ir.ast.FuncDecl@655ef322, J1AStringByteShortCharIntJ1AStringByteShortCharInt=tir.ir.ast.FuncDecl@7e276594, javalangBytetoString=tir.ir.ast.FuncDecl@3401a114, javalangByteByteBYTE=tir.ir.ast.FuncDecl@5066d65f, javalangByteByte=tir.ir.ast.FuncDecl@4233e892, javalangNumberNumber=tir.ir.ast.FuncDecl@77d2e85, javaioPrintStreamprintjavalangString=tir.ir.ast.FuncDecl@3ecd267f, javaioPrintStreamprintlnSHORT=tir.ir.ast.FuncDecl@58ffcbd7, javaioPrintStreamprintjavalangObject=tir.ir.ast.FuncDecl@555cf22, javaioPrintStreamprintlnBOOLEAN=tir.ir.ast.FuncDecl@6bb2d00b, javaioPrintStreamprintlnCHAR=tir.ir.ast.FuncDecl@3c9bfddc, javaioPrintStreamprintBYTE=tir.ir.ast.FuncDecl@1a9c38eb, javaioPrintStreamprintln=tir.ir.ast.FuncDecl@319bc845, javaioPrintStreamprintlnjavalangString=tir.ir.ast.FuncDecl@4c5474f5, javaioPrintStreamprintlnINT=tir.ir.ast.FuncDecl@2f4205be, javaioPrintStreamprintSHORT=tir.ir.ast.FuncDecl@54e22bdd, javaioPrintStreamprintlnjavalangObject=tir.ir.ast.FuncDecl@3bd418e4, javaioPrintStreamprintBOOLEAN=tir.ir.ast.FuncDecl@544820b7, javaioPrintStreamprintINT=tir.ir.ast.FuncDecl@6b98a075, javaioPrintStreamprintlnBYTE=tir.ir.ast.FuncDecl@2e61d218, javaioPrintStreamprintCHAR=tir.ir.ast.FuncDecl@3569fc08, javaioPrintStreamPrintStream=tir.ir.ast.FuncDecl@20b12f8a, javalangShorttoString=tir.ir.ast.FuncDecl@e84a8e1, javalangShortintValue=tir.ir.ast.FuncDecl@2e554a3b, javalangShortShortSHORT=tir.ir.ast.FuncDecl@54a67a45, javalangShortShort=tir.ir.ast.FuncDecl@7d42c224, javalangBooleantoString=tir.ir.ast.FuncDecl@56aaaecd, javalangBooleanBooleanBOOLEAN=tir.ir.ast.FuncDecl@522a32b1, javalangBooleanBoolean=tir.ir.ast.FuncDecl@35390ee3, javautilArraysCollisionResolution3=tir.ir.ast.FuncDecl@5e01a982, javaioOutputStreamCollisionResolution3=tir.ir.ast.FuncDecl@5ddea849, javaioPrintStreamCollisionResolution54=tir.ir.ast.FuncDecl@5ee2b6f9, javalangShortCollisionResolution3=tir.ir.ast.FuncDecl@23d1e5d0, javalangShortCollisionResolution13=tir.ir.ast.FuncDecl@704f1591, javalangIntegerCollisionResolution3=tir.ir.ast.FuncDecl@58fb7731, javalangIntegerCollisionResolution13=tir.ir.ast.FuncDecl@13e547a9, javalangObjectCollisionResolution3=tir.ir.ast.FuncDecl@3fb6cf60, javalangCharacterCollisionResolution3=tir.ir.ast.FuncDecl@37ddb69a, javalangStringCollisionResolution4=tir.ir.ast.FuncDecl@349c1daf, javalangStringCollisionResolution19=tir.ir.ast.FuncDecl@dfddc9a, javalangStringCollisionResolution25=tir.ir.ast.FuncDecl@4b9df8a, javalangStringCollisionResolution29=tir.ir.ast.FuncDecl@5e8ac0e1, javalangBooleanCollisionResolution3=tir.ir.ast.FuncDecl@aafcffa, javalangSystemCollisionResolution3=tir.ir.ast.FuncDecl@6955cb39, javalangByteCollisionResolution3=tir.ir.ast.FuncDecl@235a0c16, javalangClassCollisionResolution3=tir.ir.ast.FuncDecl@2b5f4d54, J1AStringByteShortCharIntCollisionResolution3=tir.ir.ast.FuncDecl@5f7b97da, __start=tir.ir.ast.FuncDecl@18b0930f}
+dFILE PATH: /home/david/dev/java-subset-compiler/src/test/resources/a6/J1_Kosaraju/util/Arrays.java 
+
+package util;
+
+public class Arrays {
+    public Arrays() {}
+
+Q    // Note that this implementation assumes that the array is of type Object[].
+     // assumes !(array == null)
+>    public static void fill(boolean[] array, boolean value) {
+5        for (int i = 0; i < array.length; i = i + 1)
+            array[i] = value;
+    }
+
+3    public static List asList(Object[] elements) {
+4        List list = new ArrayList(elements.length);
+8        for (int i = 0; i < elements.length; i = i + 1)
+#            list.add(elements[i]);
+        return list;
+    }
+
+}
+bFILE PATH: /home/david/dev/java-subset-compiler/src/test/resources/a6/J1_Kosaraju/util/List.java 
+
+package util;
+
+)// Definition of a simple List interface
++public interface List extends Collection {
+"    public void add(Object item);
+
+"    public Object get(int index);
+
+    public int size();
+}
+gFILE PATH: /home/david/dev/java-subset-compiler/src/test/resources/a6/J1_Kosaraju/util/ArrayList.java 
+
+package util;
+
+3// Definition of a simple ArrayList implementation
+)public class ArrayList implements List {
+    protected Object[] array;
+    protected int size;
+
+    public ArrayList() {
+        array = new Object[8];
+        size = 0;
+    }
+
+#    public ArrayList(int length) {
+$        array = new Object[length];
+        size = 0;
+    }
+
+#    public void add(Object item) {
+$        if (size >= array.length) {
+            resize();
+
+        }
+        array[size] = item;
+        size = size + 1;
+    }
+
+-    // assumes !(index < 0 || index >= size)
+#    public Object get(int index) {
+        return array[index];
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public boolean empty() {
+        return size == 0;
+    }
+
+    protected void resize() {
+:        Object[] newArray = new Object[array.length * 2];
+7        System.arraycopy(array, 0, newArray, 0, size);
+        array = newArray;
+    }
+}
+cFILE PATH: /home/david/dev/java-subset-compiler/src/test/resources/a6/J1_Kosaraju/util/Stack.java 
+
+package util;
+
+*// Definition of a simple Stack interface
+,public interface Stack extends Collection {
+#    public void push(Object item);
+
+    public Object pop();
+
+    public boolean empty();
+}
+hFILE PATH: /home/david/dev/java-subset-compiler/src/test/resources/a6/J1_Kosaraju/util/ArrayStack.java 
+
+package util;
+
++public class ArrayStack implements Stack {
+    protected Object[] array;
+    protected int size;
+
+    public ArrayStack() {
+        array = new Object[8];
+        size = 0;
+    }
+
+$    public void push(Object item) {
+$        if (size >= array.length) {
+            resize();
+
+        }
+        array[size] = item;
+        size = size + 1;
+    }
+
+    // assumes !(size == 0)
+    public Object pop() {
+        size = size - 1;
+#        Object item = array[size];
+        array[size] = null;
+        return item;
+    }
+
+    public boolean empty() {
+        return size == 0;
+    }
+
+    public int size() {
+        return size;
+    }
+
+    protected void resize() {
+:        Object[] newArray = new Object[array.length * 2];
+7        System.arraycopy(array, 0, newArray, 0, size);
+        array = newArray;
+    }
+}
+dFILE PATH: /home/david/dev/java-subset-compiler/src/test/resources/a6/J1_Kosaraju/util/System.java 
+
+package util;
+
+public class System {
+    public System() {
+    }
+
+.    // assumes !(src == null || dest == null)
+N    // assumes !(srcPos < 0 || destPos < 0 || length < 0 || srcPos + length >
+3    // size(src) || destPos + length > size(dest))
+e    public static void arraycopy(Object[] src, int srcPos, Object[] dest, int destPos, int length) {
+/        if (src == dest && srcPos < destPos) {
+:            for (int i = length - 1; i >= 0; i = i - 1) {
+5                dest[destPos + i] = src[srcPos + i];
+            }
+        } else {
+5            for (int i = 0; i < length; i = i + 1) {
+5                dest[destPos + i] = src[srcPos + i];
+            }
+
+        }
+    }
+
+}
+hFILE PATH: /home/david/dev/java-subset-compiler/src/test/resources/a6/J1_Kosaraju/util/Collection.java 
+
+package util;
+
+public interface Collection {
+    public int size();
+    public boolean empty();
+}
+]FILE PATH: /home/david/dev/java-subset-compiler/src/test/resources/a6/J1_Kosaraju/Main.java 
+
+*// This program was generated by ChatGPT.
+
+import util.*;
+
+M/* Note that this implementation assumes that the graph is represented as an
+ * array of List objects.
+ */
+public class Main {
+    public Main() {}
+
+A    public static List kosaraju(int numVertices, List[] graph) {
+'        List result = new ArrayList();
+6        boolean[] visited = new boolean[numVertices];
+(        Stack stack = new ArrayStack();
+
+F        // First pass: fill the stack with the vertices in post-order
+6        for (int i = 0; i < numVertices; i = i + 1) {
+            if (!visited[i]) {
+4                Main.dfs(i, graph, visited, stack);
+            }
+
+        }
+
+        // Transpose the graph
+2        List[] transpose = new List[numVertices];
+6        for (int i = 0; i < numVertices; i = i + 1) {
+,            transpose[i] = new ArrayList();
+
+        }
+6        for (int i = 0; i < numVertices; i = i + 1) {
+'            List neighbors = graph[i];
+?            for (int j = 0; j < neighbors.size(); j = j + 1) {
+8                Integer v = (Integer) neighbors.get(j);
+F                transpose[v.intValue()].add((Object) new Integer(i));
+            }
+
+        }
+
+M        // Second pass: visit the vertices in the order defined by the stack
+%        Arrays.fill(visited, false);
+!        while (!stack.empty()) {
+8            int v = ((Integer) stack.pop()).intValue();
+            if (!visited[v]) {
+2                List component = new ArrayList();
+<                Main.dfs(v, transpose, visited, component);
+0                result.add((Object) component);
+            }
+
+        }
+
+        return result;
+    }
+
+U    protected static void dfs(int v, List[] graph, boolean[] visited, Stack stack) {
+        visited[v] = true;
+#        List neighbors = graph[v];
+;        for (int i = 0; i < neighbors.size(); i = i + 1) {
+=            int u = ((Integer) neighbors.get(i)).intValue();
+            if (!visited[u]) {
+4                Main.dfs(u, graph, visited, stack);
+            }
+
+        }
+-        stack.push((Object) new Integer(v));
+    }
+
+X    protected static void dfs(int v, List[] graph, boolean[] visited, List component) {
+        visited[v] = true;
+0        component.add((Object) new Integer(v));
+#        List neighbors = graph[v];
+;        for (int i = 0; i < neighbors.size(); i = i + 1) {
+=            int u = ((Integer) neighbors.get(i)).intValue();
+            if (!visited[u]) {
+8                Main.dfs(u, graph, visited, component);
+            }
+
+        }
+    }
+
+-    public static void main(String[] args) {
+3        java.lang.System.out.println(Main.test());
+    }
+
+    public static int test() {
+/        // Create a test graph with 5 vertices
+$        List[] graph = new List[5];
+,        for (int i = 0; i < 5; i = i + 1) {
+(            graph[i] = new ArrayList();
+
+        }
+/        graph[0].add((Object) new Integer(4));
+/        graph[1].add((Object) new Integer(3));
+/        graph[2].add((Object) new Integer(1));
+/        graph[3].add((Object) new Integer(2));
+/        graph[3].add((Object) new Integer(0));
+/        graph[4].add((Object) new Integer(0));
+
+B        // Compute the strongly connected components of the graph
+3        List components = Main.kosaraju(5, graph);
+
+        // Verify the result
+%        List sccs = new ArrayList();
+<        for (int i = 0; i < components.size(); i = i + 1) {
+            String scc = "";
+7            List component = (List) components.get(i);
+?            for (int j = 0; j < component.size(); j = j + 1) {
+8                Integer v = (Integer) component.get(j);
+                scc = scc + v;
+            }
+$            sccs.add((Object) scc);
+
+        }
+         if (sccs.size() != 2) {
+/            return ((Object) null).hashCode();
+
+        }
+7        return Integer.parseInt((String) sccs.get(0));
+    }
+Ü}GLOBAL TABLE: [(java.lang, String), (java.lang, Class), (java.lang, Character), (util, System), (java.util, Arrays), (java.io, OutputStream), (java.lang, Object), (util, ArrayStack), (java.lang, System), (util, Stack), (java.lang, Integer), (java.io, Serializable), (java.lang, Byte), (util, Collection), (util, ArrayList), (java.io, PrintStream), (java.lang, Number), (util, Arrays), (java.lang, Cloneable), (util, List), (java.lang, Short), (, Main), (java.lang, Boolean)]
+Inheritance Graph: {(java.lang, String)=[(java.lang, Object)], (java.lang, Class)=[(java.lang, Object)], (java.lang, Character)=[(java.lang, Object)], (util, System)=[(java.lang, Object)], (java.util, Arrays)=[(java.lang, Object)], (java.io, OutputStream)=[(java.lang, Object)], (java.lang, Object)=[], (util, ArrayStack)=[(util, Stack), (java.lang, Object)], (java.lang, System)=[(java.lang, Object)], (util, Stack)=[(util, Collection), (java.lang, Object)], (java.lang, Integer)=[(java.lang, Number)], (java.io, Serializable)=[(java.lang, Object)], (java.lang, Byte)=[(java.lang, Object)], (util, Collection)=[(java.lang, Object)], (util, ArrayList)=[(util, List), (java.lang, Object)], (java.io, PrintStream)=[(java.io, OutputStream)], (java.lang, Number)=[(java.lang, Object)], (util, Arrays)=[(java.lang, Object)], (java.lang, Cloneable)=[(java.lang, Object)], (util, List)=[(util, Collection), (java.lang, Object)], (java.lang, Short)=[(java.lang, Number)], (, Main)=[(java.lang, Object)], (java.lang, Boolean)=[(java.lang, Object)]}
+åSorted AST List: [Object, String, Class, Character, System, Arrays, OutputStream, Collection, Stack, ArrayStack, System, Number, Integer, Serializable, Byte, List, ArrayList, PrintStream, Arrays, Cloneable, Short, Main, Boolean]
+×6TIR: {javalangStringlength=tir.ir.ast.FuncDecl@4763c727, javalangStringtoString=tir.ir.ast.FuncDecl@72445aba, javalangStringhashCode=tir.ir.ast.FuncDecl@61bcd567, javalangStringsubstringINTINT=tir.ir.ast.FuncDecl@1c80e49b, javalangStringtrim=tir.ir.ast.FuncDecl@458342d3, javalangStringvalueOfBYTE=tir.ir.ast.FuncDecl@15c25153, javalangStringcompareTojavalangString=tir.ir.ast.FuncDecl@1252b961, javalangStringcompareTojavalangObject=tir.ir.ast.FuncDecl@9ed238c, javalangStringvalueOfINT=tir.ir.ast.FuncDecl@56276db8, javalangStringvalueOfSHORT=tir.ir.ast.FuncDecl@51e8e6e6, javalangStringvalueOfBOOLEAN=tir.ir.ast.FuncDecl@56f6d40b, javalangStringvalueOfjavalangString=tir.ir.ast.FuncDecl@36676c1a, javalangStringconcatjavalangString=tir.ir.ast.FuncDecl@5b408dc3, javalangStringvalueOfCHAR=tir.ir.ast.FuncDecl@4d098f9b, javalangStringtoCharArray=tir.ir.ast.FuncDecl@2dbf4cbd, javalangStringindexOfjavalangString=tir.ir.ast.FuncDecl@20b5f2ac, javalangStringvalueOfjavalangObject=tir.ir.ast.FuncDecl@7fc44dec, javalangStringequalsjavalangObject=tir.ir.ast.FuncDecl@7e3060d8, javalangStringcharAtINT=tir.ir.ast.FuncDecl@293d0107, javalangStringString=tir.ir.ast.FuncDecl@2692b61e, javalangStringStringjavalangString=tir.ir.ast.FuncDecl@7b64240d, javalangStringStringCHAR=tir.ir.ast.FuncDecl@62fad19, javalangClassClass=tir.ir.ast.FuncDecl@47dbb1e2, javalangCharactertoString=tir.ir.ast.FuncDecl@74cadd41, javalangCharacterCharacterCHAR=tir.ir.ast.FuncDecl@2e54db99, javalangCharacterCharacter=tir.ir.ast.FuncDecl@55e8ec2f, utilSystemarraycopyjavalangObjectINTjavalangObjectINTINT=tir.ir.ast.FuncDecl@4f2613d1, utilSystemSystem=tir.ir.ast.FuncDecl@6d24ffa1, javautilArraysequalsBOOLEANBOOLEAN=tir.ir.ast.FuncDecl@65a4798f, javautilArraysequalsCHARCHAR=tir.ir.ast.FuncDecl@773f7880, javautilArraysArrays=tir.ir.ast.FuncDecl@878452d, javalangObjecttoString=tir.ir.ast.FuncDecl@426b6a74, javalangObjecthashCode=tir.ir.ast.FuncDecl@4c51bb7, javalangObjectclone=tir.ir.ast.FuncDecl@83298d7, javalangObjectgetClass=tir.ir.ast.FuncDecl@42a9e5d1, javalangObjectequalsjavalangObject=tir.ir.ast.FuncDecl@5b080f3a, javalangObjectObject=tir.ir.ast.FuncDecl@773cbf4f, javaioOutputStreamwriteCHAR=tir.ir.ast.FuncDecl@6b54655f, javaioOutputStreamflush=tir.ir.ast.FuncDecl@665e9289, javaioOutputStreamwriteINT=tir.ir.ast.FuncDecl@7d3430a7, javaioOutputStreamOutputStream=tir.ir.ast.FuncDecl@6f603e89, utilArrayStacksize=tir.ir.ast.FuncDecl@2756c0a7, utilArrayStackpop=tir.ir.ast.FuncDecl@350ec41e, utilArrayStackpushjavalangObject=tir.ir.ast.FuncDecl@69637b10, utilArrayStackempty=tir.ir.ast.FuncDecl@71984c3, utilArrayStackresize=tir.ir.ast.FuncDecl@165b2f7f, utilArrayStackArrayStack=tir.ir.ast.FuncDecl@5536379e, javalangSystemgc=tir.ir.ast.FuncDecl@277f7dd3, javalangSystemSystem=tir.ir.ast.FuncDecl@6c8bca63, javalangIntegerparseIntjavalangString=tir.ir.ast.FuncDecl@2364305a, javalangIntegertoString=tir.ir.ast.FuncDecl@470a696f, javalangIntegerintValue=tir.ir.ast.FuncDecl@1bc715b8, javalangIntegerIntegerjavalangString=tir.ir.ast.FuncDecl@292d1c71, javalangIntegerIntegerINT=tir.ir.ast.FuncDecl@2b491fee, javalangIntegerInteger=tir.ir.ast.FuncDecl@3f1c5af9, javalangBytetoString=tir.ir.ast.FuncDecl@1c55f277, javalangByteByteBYTE=tir.ir.ast.FuncDecl@5ddabb18, javalangByteByte=tir.ir.ast.FuncDecl@3e8f7922, utilArrayListsize=tir.ir.ast.FuncDecl@63192798, utilArrayListgetINT=tir.ir.ast.FuncDecl@50eca7c6, utilArrayListempty=tir.ir.ast.FuncDecl@58e6d4b8, utilArrayListaddjavalangObject=tir.ir.ast.FuncDecl@1de5f0ef, utilArrayListresize=tir.ir.ast.FuncDecl@376a312c, utilArrayListArrayList=tir.ir.ast.FuncDecl@28d6290, utilArrayListArrayListINT=tir.ir.ast.FuncDecl@6ca0256d, javalangNumberNumber=tir.ir.ast.FuncDecl@5ef0d29e, javaioPrintStreamprintjavalangString=tir.ir.ast.FuncDecl@38f57b3d, javaioPrintStreamprintlnSHORT=tir.ir.ast.FuncDecl@51850751, javaioPrintStreamprintjavalangObject=tir.ir.ast.FuncDecl@3ce3db41, javaioPrintStreamprintlnBOOLEAN=tir.ir.ast.FuncDecl@64df9a61, javaioPrintStreamprintlnCHAR=tir.ir.ast.FuncDecl@77602954, javaioPrintStreamprintBYTE=tir.ir.ast.FuncDecl@e260766, javaioPrintStreamprintln=tir.ir.ast.FuncDecl@2c3dec30, javaioPrintStreamprintlnjavalangString=tir.ir.ast.FuncDecl@34a97744, javaioPrintStreamprintlnINT=tir.ir.ast.FuncDecl@4275c20c, javaioPrintStreamprintSHORT=tir.ir.ast.FuncDecl@7c56e013, javaioPrintStreamprintlnjavalangObject=tir.ir.ast.FuncDecl@3fc9dfc5, javaioPrintStreamprintBOOLEAN=tir.ir.ast.FuncDecl@40258c2f, javaioPrintStreamprintINT=tir.ir.ast.FuncDecl@2cac4385, javaioPrintStreamprintlnBYTE=tir.ir.ast.FuncDecl@6731787b, javaioPrintStreamprintCHAR=tir.ir.ast.FuncDecl@16f7b4af, javaioPrintStreamPrintStream=tir.ir.ast.FuncDecl@7adf16aa, utilArraysfillBOOLEANBOOLEAN=tir.ir.ast.FuncDecl@34a1d21f, utilArraysasListjavalangObject=tir.ir.ast.FuncDecl@58bf8650, utilArraysArrays=tir.ir.ast.FuncDecl@73c60324, javalangShorttoString=tir.ir.ast.FuncDecl@71ae31b0, javalangShortintValue=tir.ir.ast.FuncDecl@4ba534b0, javalangShortShortSHORT=tir.ir.ast.FuncDecl@6f0ca692, javalangShortShort=tir.ir.ast.FuncDecl@2c104774, MaindfsINTutilListBOOLEANutilStack=tir.ir.ast.FuncDecl@2cb3d0f7, MainmainjavalangString=tir.ir.ast.FuncDecl@4e517165, MaindfsINTutilListBOOLEANutilList=tir.ir.ast.FuncDecl@44e3760b, MainkosarajuINTutilList=tir.ir.ast.FuncDecl@6a66a204, Maintest=tir.ir.ast.FuncDecl@5860f3d7, MainMain=tir.ir.ast.FuncDecl@1d7f7be7, javalangBooleantoString=tir.ir.ast.FuncDecl@42f3156d, javalangBooleanBooleanBOOLEAN=tir.ir.ast.FuncDecl@1ddae9b5, javalangBooleanBoolean=tir.ir.ast.FuncDecl@427b5f92, javautilArraysCollisionResolution3=tir.ir.ast.FuncDecl@24bdb479, javaioOutputStreamCollisionResolution3=tir.ir.ast.FuncDecl@7e3f95fe, javaioPrintStreamCollisionResolution54=tir.ir.ast.FuncDecl@34625ccd, javalangShortCollisionResolution3=tir.ir.ast.FuncDecl@2c7d121c, javalangShortCollisionResolution13=tir.ir.ast.FuncDecl@65aa6596, javalangIntegerCollisionResolution3=tir.ir.ast.FuncDecl@67389cb8, javalangIntegerCollisionResolution13=tir.ir.ast.FuncDecl@419a20a6, javalangObjectCollisionResolution3=tir.ir.ast.FuncDecl@533377b, javalangCharacterCollisionResolution3=tir.ir.ast.FuncDecl@3383649e, javalangStringCollisionResolution4=tir.ir.ast.FuncDecl@10fde30a, javalangStringCollisionResolution19=tir.ir.ast.FuncDecl@f27ea3, javalangStringCollisionResolution25=tir.ir.ast.FuncDecl@1ce61929, javalangStringCollisionResolution29=tir.ir.ast.FuncDecl@346939bf, javalangBooleanCollisionResolution3=tir.ir.ast.FuncDecl@4bf3798b, javalangSystemCollisionResolution3=tir.ir.ast.FuncDecl@58670130, javalangByteCollisionResolution3=tir.ir.ast.FuncDecl@74e47444, javalangClassCollisionResolution3=tir.ir.ast.FuncDecl@9bd0fa6, utilArraysCollisionResolution3=tir.ir.ast.FuncDecl@59d2103b, utilArrayListCollisionResolution19=tir.ir.ast.FuncDecl@39dcf4b0, utilArrayStackCollisionResolution19=tir.ir.ast.FuncDecl@6e4de19b, utilSystemCollisionResolution3=tir.ir.ast.FuncDecl@f6c03cb, MainCollisionResolution3=tir.ir.ast.FuncDecl@46f699d5, __start=tir.ir.ast.FuncDecl@18518ccf}

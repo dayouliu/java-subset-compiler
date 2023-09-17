@@ -5,7 +5,7 @@
 /* TypeLinking:
  * Check that all import-on-demand declarations refer to existing packages.
  * 
- * Main is not a package (see A.java)
+ * Main is not a package (see Test.java)
  */
 
 public class Main {

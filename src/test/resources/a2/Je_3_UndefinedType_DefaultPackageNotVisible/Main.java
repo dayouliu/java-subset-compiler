@@ -5,7 +5,7 @@
 /**
  * Typelinking:
  * - Check that all types actually resolve to defined types in the
- * program or the class library. (see A.java)
+ * program or the class library. (see Test.java)
  */
 public class Main {
 
