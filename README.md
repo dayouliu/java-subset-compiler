@@ -1,5 +1,7 @@
 # Java Subset Compiler
 
+Archived version made in a 3 person team.
+
 ### Build and Run
 
 ```
