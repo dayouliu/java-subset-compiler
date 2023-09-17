@@ -79,4 +79,4 @@ fabric.properties
 *.log
 joosc
 main
-build/*
+build
