@@ -1,7 +1,0 @@
-public class A {
-  public static int counter;
-  public A() {}
-  public int m() {
-    return counter;
-  }
-}
